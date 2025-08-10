@@ -1,3 +1,5 @@
+analyze
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,34 +17,226 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
 
+  <!-- Inlined Critical CSS -->
+  <style>
+    /* ===== CRITICAL CSS ===== */
+    /* Above-the-fold styles only */
+    :root {
+      /* New Color Palette */
+      --primary: #4361ee;
+      --primary-light: #4895ef;
+      --primary-dark: #3a0ca3;
+      --accent: #f72585;
+      --accent-light: #ff70a6;
+      --accent-dark: #b5179e;
+      --white: #ffffff;
+      --light-gray: #f8f9fa;
+      --medium-gray: #e9ecef;
+      --dark-gray: #6c757d;
+      --charcoal: #212529;
+      --success: #4cc9f0;
+      --warning: #f8961e;
+      --danger: #ef233c;
+      --text-primary: var(--charcoal);
+      --text-secondary: var(--dark-gray);
+      --text-light: var(--white);
+      --bg-light: var(--light-gray);
+      --bg-dark: var(--charcoal);
+      --border-color: rgba(0, 0, 0, 0.1);
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      
+      /* Additional variables for consistency */
+      --timeline-color: var(--primary);
+      --card-bg: var(--white);
+      --shadow: 0 5px 15px var(--shadow-color);
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-primary);
+      background-color: var(--white);
+    }
+    
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      box-shadow: 0 2px 10px var(--shadow-color);
+    }
+    
+    /* UPDATED HERO SECTION WITH LIGHT GREY BG */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--light-gray);
+      color: var(--text-primary);
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.1;
+      z-index: -1;
+      animation: float 15s infinite ease-in-out alternate;
+    }
+
+    .hero::before {
+      width: 400px;
+      height: 400px;
+      background: var(--primary);
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+
+    .hero::after {
+      width: 300px;
+      height: 300px;
+      background: var(--accent);
+      bottom: -100px;
+      right: -100px;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(5%, 5%);
+      }
+      50% {
+        transform: translate(-5%, 5%);
+      }
+      75% {
+        transform: translate(-5%, -5%);
+      }
+    }
+
+    .hero .h1,
+    .hero .section-text {
+      color: var(--text-primary);
+    }
+
+    .hero .btn {
+      border-color: var(--primary);
+      background-color: transparent;
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .hero .btn:is(:hover, :focus-visible) {
+      background-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-4px);
+    }
+
+    /* ===== GLOW BUTTON EFFECT ===== */
+    .btn-glow {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-glow::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      border-radius: var(--radius-pill);
+      transform: scale(0.9);
+      filter: blur(10px);
+      opacity: 0;
+      background: linear-gradient(
+        to left,
+        var(--accent),
+        var(--accent-light),
+        var(--accent-dark),
+        var(--accent-light),
+        var(--accent)
+      );
+      background-size: 200% 200%;
+      transition: all 0.3s ease;
+    }
+
+    .btn-glow:hover::after {
+      opacity: 0.8;
+      animation: animateGlow 1.5s linear infinite;
+    }
+
+    @keyframes animateGlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    /* Button styles */
+    .btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Primary button - blue glow */
+    .btn-primary::after {
+      background: linear-gradient(
+        to left,
+        var(--primary),
+        var(--primary-light),
+        var(--primary-dark),
+        var(--primary-light),
+        var(--primary)
+      );
+    }
+
+    /* Secondary button - pink glow */
+    .btn-secondary {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    .btn-secondary::after {
+      background: linear-gradient(
+        to left,
+        var(--accent),
+        var(--accent-light),
+        var(--accent-dark),
+        var(--accent-light),
+        var(--accent)
+      );
+    }
+
+    .btn-secondary:is(:hover, :focus-visible) {
+      background-color: var(--accent);
+      color: var(--white);
+    }
+  </style>
+
+  <!-- Main CSS (non-critical) -->
   <style>
     /* ===== CUSTOM PROPERTY ===== */
     :root {
-      /* colors */
-      --white: hsla(0, 0%, 100%, 1);
-      --white-a8: hsla(0, 0%, 100%, 0.08);
-      --white-a12: hsla(0, 0%, 100%, 0.12);
-      --cultured: hsla(220, 20%, 97%, 1);
-      --snow: hsla(345, 57%, 97%, 1);
-      --manatee: hsla(219, 10%, 62%, 1);
-      --black-coral: hsla(220, 12%, 43%, 1);
-      --cadet-blue-crayola-a20: hsla(222, 23%, 71%, 0.2);
-      --cinnamon-satin: hsla(344, 53%, 62%, 1);
-      --raisin-black: hsla(216, 14%, 14%, 1);
-      --raisin-black-a6: hsla(216, 14%, 14%, 0.06);
-      --gunmetal: hsla(214, 15%, 21%, 1);
-      --charcoal: hsla(219, 22%, 26%, 1);
-      --timeline-color: #6a5acd;
-      --primary: #6a5acd;
-      --secondary: #c7b1dd;
-      --accent: #e3a6b6;
-      --text: var(--charcoal);
-      --text-light: var(--black-coral);
-      --card-bg: var(--white);
-      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      --header-height: 70px;
-
-      /* typography */
+      /* Typography */
       --ff-manrope: 'Manrope', sans-serif;
       --ff-pacifico: 'Pacifico', cursive;
       --fs-1: calc(2.7rem + 1.38vw);
@@ -55,15 +249,15 @@
       --fs-8: 1.4rem;
       --fw-700: 700;
 
-      /* spacing */
+      /* Spacing */
       --section-padding: 90px;
 
-      /* box shadow */
-      --shadow-1: 0 0 20px hsla(216, 14%, 14%, 0.05);
-      --shadow-2: 0 10px 30px hsla(216, 14%, 14%, 0.15);
-      --shadow-3: 0 15px 40px hsla(216, 14%, 14%, 0.2);
+      /* Box shadow */
+      --shadow-1: 0 0 20px var(--shadow-color);
+      --shadow-2: 0 10px 30px var(--shadow-color);
+      --shadow-3: 0 15px 40px var(--shadow-color);
 
-      /* border radius */
+      /* Border radius */
       --radius-circle: 50%;
       --radius-pill: 100px;
       --radius-8: 8px;
@@ -72,7 +266,7 @@
       --radius-24: 24px;
       --radius-section: 24px;
 
-      /* transition */
+      /* Transition */
       --transition-1: 0.25s ease;
       --transition-2: 0.5s ease;
       --transition-3: 0.3s ease-in-out;
@@ -135,19 +329,18 @@
       font-family: var(--ff-manrope);
       font-size: 10px;
       scroll-behavior: smooth;
-      scroll-padding-top: var(--header-height);
+      scroll-padding-top: 100px;
       overflow-x: hidden;
     }
 
     body {
       background-color: var(--white);
-      color: var(--black-coral);
+      color: var(--text-primary);
       font-size: 1.6rem;
       line-height: 1.7;
       overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
-      padding-top: var(--header-height);
     }
 
     body.nav-active {
@@ -159,15 +352,15 @@
     }
 
     ::-webkit-scrollbar-track {
-      background-color: hsl(0, 0%, 98%);
+      background-color: var(--light-gray);
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: hsl(0, 0%, 80%);
+      background-color: var(--medium-gray);
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background-color: hsl(0, 0%, 70%);
+      background-color: var(--dark-gray);
     }
 
     /* ===== MAIN LAYOUT ===== */
@@ -186,39 +379,31 @@
     }
 
     /* Section background colors */
-    .hero {
-      background-color: transparent;
-      color: var(--raisin-black);
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 100vw;
-    }
-
     .about {
-      background-color: #ffffff;
+      background-color: var(--white);
     }
 
     .timeline {
-      background-color: var(--cultured)
+      background-color: var(--light-gray);
     }
 
     .project {
-      background-color: #ffffff;
+      background-color: var(--white);
     }
 
     .certifications {
-      background-color: var(--cultured);
+      background-color: var(--light-gray);
     }
 
     .contact-section {
-      background-color: #f8f9fa;
+      background-color: var(--light-gray);
     }
 
     .section-title {
       margin-block-end: 16px;
       position: relative;
       display: inline-block;
+      color: var(--text-primary);
     }
 
     .section-title::after {
@@ -248,10 +433,12 @@
     .social-link {
       font-size: 2rem;
       transition: var(--transition-1);
+      color: var(--text-primary);
     }
 
     .social-link:is(:hover, :focus-visible) {
       transform: translateY(-3px);
+      color: var(--primary);
     }
 
     .w-100 {
@@ -262,7 +449,7 @@
     .h2,
     .h3,
     .h4 {
-      color: var(--charcoal);
+      color: var(--text-primary);
       line-height: 1.3;
     }
 
@@ -283,10 +470,9 @@
     }
 
     .btn {
-      color: var(--cinnamon-satin);
       font-size: var(--fs-6);
       font-weight: var(--fw-700);
-      border: 2px solid var(--cinnamon-satin);
+      border: 2px solid;
       max-width: max-content;
       padding: 12px 28px;
       border-radius: var(--radius-pill);
@@ -298,14 +484,9 @@
       transform: translateY(-4px);
     }
 
-    .btn-primary,
-    .btn-secondary:is(:hover, :focus-visible) {
-      background-color: var(--cinnamon-satin);
-      color: var(--white);
-    }
-
     .section-text {
       font-size: var(--fs-5);
+      color: var(--text-secondary);
     }
 
     .grid-list {
@@ -345,42 +526,44 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: var(--header-height);
-      padding-block: 10px;
+      padding-block: 20px;
       box-shadow: var(--shadow-1);
       z-index: 4;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.904);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.39);
-      transition: background-color 0.3s ease;
+      border: 1px solid var(--border-color);
     }
 
-    .header.scrolled {
-      background-color: rgba(255, 255, 255, 0.98);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
     }
 
     .header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 100%;
     }
 
     .nav-open-btn {
       font-size: 3.5rem;
-      color: var(--gunmetal);
+      color: var(--text-primary);
     }
 
     .navbar {
       position: fixed;
-      top: var(--header-height);
+      top: 0;
       right: -300px;
-      background-color: var(--raisin-black);
-      color: var(--white);
+      background-color: var(--bg-dark);
+      color: var(--text-light);
       max-width: 300px;
       width: 100%;
-      height: calc(100vh - var(--header-height));
+      height: 100vh;
       padding: 30px;
       padding-block-end: 40px;
       display: flex;
@@ -427,9 +610,9 @@
       font-weight: var(--fw-700);
       padding-block: 6px;
       position: relative;
+      color: var(--text-light);
     }
 
-    /* Added underline animation for navbar links */
     .navbar-link::after {
       content: '';
       position: absolute;
@@ -437,7 +620,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background-color: var(--cinnamon-satin);
+      background-color: var(--accent);
       transition: var(--transition-1);
     }
 
@@ -446,23 +629,23 @@
       width: 100%;
     }
 
-    /* Desktop navbar links */
     @media (min-width: 992px) {
       .navbar-link {
-        color: var(--charcoal);
+        color: var(--text-primary);
       }
 
       .navbar-link::after {
-        background-color: var(--cinnamon-satin);
+        background-color: var(--accent);
       }
     }
 
     .contact-link {
       transition: var(--transition-1);
+      color: var(--text-light);
     }
 
     .contact-link:is(:hover, :focus-visible) {
-      color: var(--cinnamon-satin);
+      color: var(--accent);
     }
 
     .overlay {
@@ -471,7 +654,7 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: var(--raisin-black);
+      background-color: var(--bg-dark);
       pointer-events: none;
       opacity: 0;
       transition: var(--transition-1);
@@ -482,86 +665,7 @@
       opacity: 0.8;
     }
 
-    /* ===== AURORA BACKGROUND ===== */
-    .aurora-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      --stripe-color: #fff;
-      
-      --stripes: repeating-linear-gradient(
-        100deg,
-        var(--stripe-color) 0%,
-        var(--stripe-color) 7%,
-        transparent 10%,
-        transparent 12%,
-        var(--stripe-color) 16%
-      );
-
-      --rainbow: repeating-linear-gradient(
-        100deg,
-        #60a5fa 10%,
-        #e879f9 15%,
-        #60a5fa 20%,
-        #5eead4 25%,
-        #60a5fa 30%
-      );
-      
-      background-image: var(--stripes), var(--rainbow);
-      background-size: 300%, 200%;
-      background-position: 50% 50%, 50% 50%;
-      filter: blur(10px) invert(100%);
-      mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
-      opacity: 0.3;
-    }
-
-    .aurora-bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: var(--stripes), var(--rainbow);
-      background-size: 200%, 100%;
-      animation: aurora-animation 60s linear infinite;
-      background-attachment: fixed;
-      mix-blend-mode: difference;
-    }
-
-    @keyframes aurora-animation {
-      from {
-        background-position: 50% 50%, 50% 50%;
-      }
-      to {
-        background-position: 350% 50%, 350% 50%;
-      }
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero {
-      padding-block-start: calc(var(--section-padding) + 20px);
-      background-color: transparent;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero .h1,
-    .hero .section-text,
-    .hero .btn {
-      color: var(--raisin-black);
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-
-    .hero .btn {
-      border-color: var(--raisin-black);
-    }
-
-    .hero .btn:is(:hover, :focus-visible) {
-      background-color: var(--raisin-black);
-      color: var(--white);
-    }
-
+    /* ===== UPDATED HERO SECTION ===== */
     .hero .container {
       display: grid;
       gap: 50px;
@@ -575,7 +679,6 @@
       margin-inline: auto;
     }
 
-    /* Updated Profile Image Styles with SVG Mask */
     .profile-image-container {
       width: 100%;
       max-width: 560px;
@@ -595,7 +698,7 @@
       -webkit-mask-position: center;
       mask-position: center;
       object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: var(--shadow-2);
     }
 
     @supports (mask-image: url('')) or (-webkit-mask-image: url('')) {
@@ -627,16 +730,33 @@
       gap: 12px;
     }
 
-    /* Updated Name Style */
     .hero-name {
       font-family: var(--ff-pacifico);
       font-size: calc(4rem + 1.5vw);
-      color: var(--raisin-black);
+      color: var(--charcoal);
       margin-bottom: 15px;
       display: inline-block;
+      position: relative;
     }
 
-    /* Updated Title Size */
+    .hero-name::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-name:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
     .hero-title {
       font-size: calc(1.8rem + 0.5vw);
       margin-bottom: 20px;
@@ -646,7 +766,7 @@
     .timeline-title {
       text-align: center;
       margin-bottom: 50px;
-      color: var(--charcoal);
+      color: var(--text-primary);
     }
 
     .timeline-items {
@@ -707,11 +827,11 @@
 
     .timeline-content h3 {
       margin-bottom: 10px;
-      color: var(--charcoal);
+      color: var(--text-primary);
     }
 
     .timeline-content p {
-      color: var(--black-coral);
+      color: var(--text-secondary);
     }
 
     .timeline-item:nth-child(odd) .timeline-content {
@@ -742,7 +862,6 @@
       top: 20px;
     }
 
-    /* Responsive Timeline */
     @media (max-width: 767px) {
       .timeline-items::before {
         left: 7px;
@@ -777,7 +896,7 @@
     }
 
     .skills-container {
-      background-color: var(--cultured);
+      background-color: var(--light-gray);
       padding: 30px;
       border-radius: var(--radius-16);
       margin-bottom: 80px;
@@ -816,7 +935,7 @@
 
     .skill-name {
       font-weight: var(--fw-700);
-      color: var(--charcoal);
+      color: var(--text-primary);
       text-align: center;
     }
 
@@ -846,6 +965,110 @@
       margin-block: 16px 10px;
     }
 
+    /* ===== PROJECT TAGS ===== */
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    .card-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-color);
+    }
+
+    /* Specific tag colors */
+    .card-tag--figma {
+      background-color: rgba(162, 89, 255, 0.1);
+      border-color: rgba(162, 89, 255, 0.2);
+    }
+
+    .card-tag--react {
+      background-color: rgba(97, 218, 251, 0.1);
+      border-color: rgba(97, 218, 251, 0.2);
+    }
+
+    .card-tag--xd {
+      background-color: rgba(255, 62, 165, 0.1);
+      border-color: rgba(255, 62, 165, 0.2);
+    }
+
+    .card-tag--js {
+      background-color: rgba(247, 223, 30, 0.1);
+      border-color: rgba(247, 223, 30, 0.2);
+    }
+
+    .card-tag--node {
+      background-color: rgba(104, 160, 99, 0.1);
+      border-color: rgba(104, 160, 99, 0.2);
+    }
+
+    .card-tag--mongodb {
+      background-color: rgba(77, 168, 86, 0.1);
+      border-color: rgba(77, 168, 86, 0.2);
+    }
+
+    .card-tag--illustrator {
+      background-color: rgba(255, 148, 0, 0.1);
+      border-color: rgba(255, 148, 0, 0.2);
+    }
+
+    .card-tag--photoshop {
+      background-color: rgba(49, 168, 255, 0.1);
+      border-color: rgba(49, 168, 255, 0.2);
+    }
+
+    .card-tag--html {
+      background-color: rgba(227, 79, 38, 0.1);
+      border-color: rgba(227, 79, 38, 0.2);
+    }
+
+    .card-tag--css {
+      background-color: rgba(38, 77, 228, 0.1);
+      border-color: rgba(38, 77, 228, 0.2);
+    }
+
+    .card-tag--sketch {
+      background-color: rgba(253, 159, 41, 0.1);
+      border-color: rgba(253, 159, 41, 0.2);
+    }
+
+    .card-tag svg {
+      width: 14px;
+      height: 14px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 767px) {
+      .card-tags {
+        gap: 6px;
+      }
+      .card-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+      }
+      .card-tag svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
     /* ===== PROJECTS ===== */
     .project .title-wrapper {
       margin-block-end: 40px;
@@ -866,6 +1089,7 @@
       gap: var(--padding);
       border-radius: var(--radius-8);
       overflow: hidden;
+      position: relative;
     }
 
     .project-card-1,
@@ -886,113 +1110,6 @@
       font-size: var(--fs-8);
       font-weight: var(--fw-700);
       text-transform: uppercase;
-    }
-
-    /* Project Tags */
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .card-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      background-color: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .card-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Specific tag colors */
-    .card-tag--figma {
-      background-color: rgba(162, 89, 255, 0.2);
-      border-color: rgba(162, 89, 255, 0.3);
-    }
-
-    .card-tag--react {
-      background-color: rgba(97, 218, 251, 0.2);
-      border-color: rgba(97, 218, 251, 0.3);
-    }
-
-    .card-tag--xd {
-      background-color: rgba(255, 62, 165, 0.2);
-      border-color: rgba(255, 62, 165, 0.3);
-    }
-
-    .card-tag--js {
-      background-color: rgba(247, 223, 30, 0.2);
-      border-color: rgba(247, 223, 30, 0.3);
-      color: #323330;
-    }
-
-    .card-tag--node {
-      background-color: rgba(104, 160, 99, 0.2);
-      border-color: rgba(104, 160, 99, 0.3);
-    }
-
-    .card-tag--mongodb {
-      background-color: rgba(77, 168, 86, 0.2);
-      border-color: rgba(77, 168, 86, 0.3);
-    }
-
-    .card-tag--illustrator {
-      background-color: rgba(255, 148, 0, 0.2);
-      border-color: rgba(255, 148, 0, 0.3);
-    }
-
-    .card-tag--photoshop {
-      background-color: rgba(49, 168, 255, 0.2);
-      border-color: rgba(49, 168, 255, 0.3);
-    }
-
-    .card-tag--html {
-      background-color: rgba(227, 79, 38, 0.2);
-      border-color: rgba(227, 79, 38, 0.3);
-    }
-
-    .card-tag--css {
-      background-color: rgba(38, 77, 228, 0.2);
-      border-color: rgba(38, 77, 228, 0.3);
-    }
-
-    .card-tag--sketch {
-      background-color: rgba(253, 159, 41, 0.2);
-      border-color: rgba(253, 159, 41, 0.3);
-    }
-
-    .card-tag svg {
-      width: 14px;
-      height: 14px;
-      margin-right: 6px;
-      vertical-align: middle;
-    }
-
-    @media (max-width: 767px) {
-      .card-tags {
-        gap: 6px;
-      }
-      
-      .card-tag {
-        font-size: 11px;
-        padding: 3px 8px;
-      }
-      
-      .card-tag svg {
-        width: 12px;
-        height: 12px;
-      }
     }
 
     .project-card .card-title {
@@ -1019,7 +1136,7 @@
     .certifications-title {
       text-align: center;
       font-size: var(--fs-2);
-      color: var(--charcoal);
+      color: var(--text-primary);
       margin-bottom: 50px;
       position: relative;
     }
@@ -1070,7 +1187,7 @@
       height: 60px;
       object-fit: contain;
       border-radius: var(--radius-8);
-      background: var(--cultured);
+      background: var(--light-gray);
       padding: 10px;
       box-shadow: var(--shadow-1);
     }
@@ -1082,22 +1199,22 @@
 
     .certification-issuer {
       font-weight: var(--fw-700);
-      color: var(--charcoal);
+      color: var(--text-primary);
     }
 
     .certification-date {
       font-size: var(--fs-8);
-      color: var(--black-coral);
+      color: var(--text-secondary);
     }
 
     .certification-title {
       font-size: var(--fs-5);
       margin-bottom: 15px;
-      color: var(--charcoal);
+      color: var(--text-primary);
     }
 
     .certification-description {
-      color: var(--black-coral);
+      color: var(--text-secondary);
       margin-bottom: 20px;
       font-size: var(--fs-7);
     }
@@ -1127,11 +1244,11 @@
     /* ===== CONTACT SECTION ===== */
     .contact-section { 
       padding-block: var(--section-padding);
-      background-color: var(--white);
+      background-color: var(--light-gray);
     }
 
     .contact-card {
-      background-color: var(--snow);
+      background-color: var(--white);
       padding: 60px;
       border-radius: var(--radius-16);
       display: grid;
@@ -1146,7 +1263,7 @@
 
     .contact-title {
       font-size: var(--fs-2);
-      color: var(--charcoal);
+      color: var(--text-primary);
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
@@ -1165,7 +1282,7 @@
     }
 
     .contact-subtitle {
-      color: var(--black-coral);
+      color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
       font-size: var(--fs-5);
@@ -1173,24 +1290,24 @@
 
     .input-field {
       background-color: var(--white);
-      color: var(--black-coral);
+      color: var(--text-primary);
       font-size: var(--fs-7);
       padding: 14px 18px;
       border-radius: var(--radius-8);
       outline: none;
       margin-block-end: 20px;
-      border: 1px solid transparent;
+      border: 1px solid var(--border-color);
       transition: var(--transition-1);
     }
 
     .input-field:focus {
       border-color: var(--primary);
       background-color: var(--white);
-      box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.1);
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
     }
 
     .input-field::placeholder { 
-      color: var(--manatee); 
+      color: var(--text-secondary); 
     }
 
     textarea.input-field {
@@ -1222,13 +1339,13 @@
       overflow: hidden;
       z-index: 1;
       text-align: center;
-      color: var(--charcoal);
+      color: var(--text-primary);
     }
 
     .social-contact-card .card-icon {
       width: 60px;
       height: 60px;
-      background-color: var(--cultured);
+      background-color: var(--light-gray);
       border-radius: var(--radius-circle);
       display: flex;
       align-items: center;
@@ -1242,12 +1359,12 @@
     .social-contact-card .card-title {
       font-size: var(--fs-5);
       margin-bottom: 8px;
-      color: var(--charcoal);
+      color: var(--text-primary);
     }
 
     .social-contact-card .card-text {
       font-size: var(--fs-7);
-      color: var(--black-coral);
+      color: var(--text-secondary);
     }
 
     .social-contact-card .hover-effect {
@@ -1295,8 +1412,8 @@
 
     /* ===== REDESIGNED FOOTER ===== */
     .footer {
-      background-color: var(--raisin-black);
-      color: var(--white);
+      background-color: var(--bg-dark);
+      color: var(--text-light);
       padding: 60px 0 30px;
     }
 
@@ -1333,7 +1450,8 @@
     }
 
     .footer-text {
-      color: var(--white-a12);
+      color: var(--text-light);
+      opacity: 0.8;
       max-width: 400px;
     }
 
@@ -1344,13 +1462,15 @@
     }
 
     .footer-social-link {
-      color: var(--white);
+      color: var(--text-light);
       font-size: 20px;
       transition: var(--transition-1);
+      opacity: 0.8;
     }
 
     .footer-social-link:hover {
       color: var(--accent);
+      opacity: 1;
     }
 
     .footer-links-group {
@@ -1361,7 +1481,7 @@
 
     .footer-title {
       font-size: var(--fs-5);
-      color: var(--white);
+      color: var(--text-light);
       position: relative;
       padding-bottom: 10px;
     }
@@ -1383,17 +1503,19 @@
     }
 
     .footer-link {
-      color: var(--white-a12);
+      color: var(--text-light);
+      opacity: 0.8;
       transition: var(--transition-1);
     }
 
     .footer-link:hover {
-      color: var(--white);
+      color: var(--text-light);
+      opacity: 1;
       transform: translateX(5px);
     }
 
     .footer-bottom {
-      border-top: 1px solid var(--white-a8);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 30px;
       margin-top: 60px;
       display: flex;
@@ -1412,7 +1534,8 @@
     }
 
     .copyright {
-      color: var(--white-a12);
+      color: var(--text-light);
+      opacity: 0.8;
     }
 
     .footer-legal {
@@ -1421,12 +1544,14 @@
     }
 
     .footer-legal-link {
-      color: var(--white-a12);
+      color: var(--text-light);
+      opacity: 0.8;
       transition: var(--transition-1);
     }
 
     .footer-legal-link:hover {
-      color: var(--white);
+      color: var(--text-light);
+      opacity: 1;
     }
 
     /* ===== MEDIA QUERIES ===== */
@@ -1513,31 +1638,41 @@
       }
 
       .navbar-link {
-        color: var(--charcoal);
+        color: var(--text-primary);
         transition: var(--transition-1);
       }
 
       .navbar-link:is(:hover, :focus-visible) {
-        color: var(--cinnamon-satin);
+        color: var(--accent);
       }
 
       .navbar .social-link {
-        color: var(--charcoal);
+        color: var(--text-primary);
         font-size: 1.8rem;
       }
 
       .header {
+        position: absolute;
+        top: 45px;
+        max-width: 960px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-inline: 16px;
+        border-radius: var(--radius-8);
+      }
+
+      .header.active {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
         max-width: unset;
         border-radius: 0;
+        animation: slideIn 0.5s ease forwards;
       }
 
       /* Hero */
       .hero {
-        padding-block-start: calc(var(--section-padding) + 20px);
+        padding-block-start: calc(var(--section-padding) + 80px);
       }
 
       .hero .container {
@@ -1605,7 +1740,8 @@
     }
 
     @media (min-width: 1200px) {
-      .container {
+      .container,
+      .header {
         max-width: 1140px;
       }
 
@@ -1619,7 +1755,8 @@
     }
 
     @media (min-width: 1400px) {
-      .container {
+      .container,
+      .header {
         max-width: 1320px;
       }
 
@@ -1649,7 +1786,7 @@
   <header class="header" data-header>
     <div class="container">
       <a href="#" class="logo">
-        <img src="./assets/images/logo-dark.svg" width="64" height="24" alt="Sunny home">
+        <img src="./assets/images/sunnylogo.svg" width="64" height="24" alt="Sunny home">
       </a>
 
       <nav class="navbar" data-navbar>
@@ -1694,9 +1831,8 @@
 
   <main>
     <article>
-      <!-- Hero Section with Aurora Background -->
+      <!-- Hero Section with Light Grey Background -->
       <section class="section hero" aria-label="home">
-        <div class="aurora-bg"></div>
         <div class="container">
           <figure class="hero-banner">
             <div class="profile-image-container">
@@ -1706,24 +1842,20 @@
                 class="profile-image-mask" 
                 data-reveal="top">
             </div>
-            <img src="./assets/images/hero-shape.svg" width="203" height="91" alt="250+ Projects Done" class="shape"
-              data-reveal="top" data-reveal-delay="0.25s">
           </figure>
 
           <div class="hero-content">
-            <div class="hero-name" data-reveal="top" data-reveal-delay="0.3s">Tatiparthi Sunny</div>
-            <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
+            <h1 class="hero-name" data-reveal="top" data-reveal-delay="0.3s">Tatiparthi Sunny</h1>
+            <h2 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
               UI/UX Designer & Full Stack Developer
-            </h1>
+            </h2>
             <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
               Crafting immersive digital experiences that blend aesthetic appeal with seamless functionality. 
               I specialize in creating intuitive interfaces and robust web applications that drive engagement and deliver results.
             </p>
             <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
               <a href="#projects" class="btn btn-primary">View My Work</a>
-              <a href="https://drive.google.com/file/d/your-resume-id/view" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                Download Resume
-              </a>
+              <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
           </div>
         </div>
@@ -1901,32 +2033,30 @@
             <li>
               <div class="project-card project-card-1" style="background-color: #f8f5fb">
                 <div class="card-content" data-reveal="left">
-                  <p class="card-tag" style="color: #a07cc5">E-commerce Platform</p>
-                  
+                  <p class="card-tag" style="color: var(--primary)">Web Design</p>
                   <div class="card-tags">
                     <span class="card-tag card-tag--figma">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma" style="margin-right: 4px;">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma">
                       Figma
                     </span>
                     <span class="card-tag card-tag--react">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React" style="margin-right: 4px;">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React">
                       React
                     </span>
                     <span class="card-tag card-tag--node">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="14" height="14" alt="Node.js" style="margin-right: 4px;">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="14" height="14" alt="Node.js">
                       Node.js
                     </span>
                     <span class="card-tag card-tag--mongodb">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="14" height="14" alt="MongoDB" style="margin-right: 4px;">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="14" height="14" alt="MongoDB">
                       MongoDB
                     </span>
                   </div>
-                  
-                  <h3 class="h3 card-title">Modern E-commerce Solution</h3>
+                  <h3 class="h3 card-title">E-commerce Platform</h3>
                   <p class="card-text">
-                    Designed and developed a custom e-commerce platform with focus on conversion optimization, mobile-first design, and seamless checkout experience.
+                    Designed and developed a custom e-commerce solution with focus on conversion optimization and mobile experience.
                   </p>
-                  <a href="#" class="btn-text" style="color: #a07cc5">
+                  <a href="#" class="btn-text" style="color: var(--primary)">
                     <span class="span">View Case Study</span>
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -1940,32 +2070,26 @@
             <li>
               <div class="project-card project-card-2" style="background-color: #f1f5fd">
                 <div class="card-content" data-reveal="right">
-                  <p class="card-tag" style="color: #3f78e0">Fitness App</p>
-                  
+                  <p class="card-tag" style="color: var(--accent)">Mobile Design</p>
                   <div class="card-tags">
                     <span class="card-tag card-tag--xd">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe/adobe-xd.svg" width="14" height="14" alt="Adobe XD" style="margin-right: 4px;">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe/adobe-xd.svg" width="14" height="14" alt="Adobe XD">
                       Adobe XD
                     </span>
+                    <span class="card-tag card-tag--react">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React Native">
+                      React Native
+                    </span>
                     <span class="card-tag card-tag--js">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="14" height="14" alt="JavaScript" style="margin-right: 4px;">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="14" height="14" alt="JavaScript">
                       JavaScript
                     </span>
-                    <span class="card-tag card-tag--html">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="14" height="14" alt="HTML5" style="margin-right: 4px;">
-                      HTML5
-                    </span>
-                    <span class="card-tag card-tag--css">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="14" height="14" alt="CSS3" style="margin-right: 4px;">
-                      CSS3
-                    </span>
                   </div>
-                  
-                  <h3 class="h3 card-title">Fitness Tracking Application</h3>
+                  <h3 class="h3 card-title">Fitness App</h3>
                   <p class="card-text">
-                    Created a complete UI/UX design system for a fitness tracking application with personalized workout plans, activity tracking, and social features.
+                    Created a complete UI/UX design system for a fitness tracking application with personalized workout plans.
                   </p>
-                  <a href="#" class="btn-text" style="color: #3f78e0">
+                  <a href="#" class="btn-text" style="color: var(--accent)">
                     <span class="span">View Case Study</span>
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -1979,32 +2103,26 @@
             <li>
               <div class="project-card project-card-3" style="background-color: #f5faf7">
                 <div class="card-content" data-reveal="left">
-                  <p class="card-tag" style="color: #7cb798">Corporate Website</p>
-                  
+                  <p class="card-tag" style="color: var(--success)">Web Design</p>
                   <div class="card-tags">
-                    <span class="card-tag card-tag--sketch">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg" width="14" height="14" alt="Sketch" style="margin-right: 4px;">
-                      Sketch
+                    <span class="card-tag card-tag--html">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="14" height="14" alt="HTML5">
+                      HTML5
                     </span>
-                    <span class="card-tag card-tag--react">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React" style="margin-right: 4px;">
-                      React
+                    <span class="card-tag card-tag--css">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="14" height="14" alt="CSS3">
+                      CSS3
                     </span>
-                    <span class="card-tag card-tag--illustrator">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" width="14" height="14" alt="Illustrator" style="margin-right: 4px;">
-                      Illustrator
-                    </span>
-                    <span class="card-tag card-tag--photoshop">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" width="14" height="14" alt="Photoshop" style="margin-right: 4px;">
-                      Photoshop
+                    <span class="card-tag card-tag--js">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="14" height="14" alt="JavaScript">
+                      JavaScript
                     </span>
                   </div>
-                  
-                  <h3 class="h3 card-title">Corporate Website Redesign</h3>
+                  <h3 class="h3 card-title">Corporate Website</h3>
                   <p class="card-text">
-                    Redesigned a corporate website with improved information architecture, interactive elements, and a modern visual identity that increased engagement by 40%.
+                    Redesigned a corporate website with improved information architecture and interactive elements.
                   </p>
-                  <a href="#" class="btn-text" style="color: #7cb798">
+                  <a href="#" class="btn-text" style="color: var(--success)">
                     <span class="span">View Case Study</span>
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -2018,32 +2136,26 @@
             <li>
               <div class="project-card project-card-4" style="background-color: #fcf4f6">
                 <div class="card-content" data-reveal="left">
-                  <p class="card-tag" style="color: #d16b86">Travel App</p>
-                  
+                  <p class="card-tag" style="color: var(--accent)">Mobile Design</p>
                   <div class="card-tags">
                     <span class="card-tag card-tag--figma">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma" style="margin-right: 4px;">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma">
                       Figma
                     </span>
-                    <span class="card-tag card-tag--react">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React" style="margin-right: 4px;">
-                      React Native
+                    <span class="card-tag card-tag--illustrator">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" width="14" height="14" alt="Illustrator">
+                      Illustrator
                     </span>
-                    <span class="card-tag card-tag--node">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="14" height="14" alt="Node.js" style="margin-right: 4px;">
-                      Node.js
-                    </span>
-                    <span class="card-tag card-tag--mongodb">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="14" height="14" alt="MongoDB" style="margin-right: 4px;">
-                      MongoDB
+                    <span class="card-tag card-tag--photoshop">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" width="14" height="14" alt="Photoshop">
+                      Photoshop
                     </span>
                   </div>
-                  
-                  <h3 class="h3 card-title">Travel Planning Application</h3>
+                  <h3 class="h3 card-title">Travel App</h3>
                   <p class="card-text">
-                    Designed a travel planning application with itinerary builder, location-based recommendations, and social sharing features for iOS and Android.
+                    Designed a travel planning application with itinerary builder and location-based recommendations.
                   </p>
-                  <a href="#" class="btn-text" style="color: #d16b86">
+                  <a href="#" class="btn-text" style="color: var(--accent)">
                     <span class="span">View Case Study</span>
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
                   </a>
@@ -2222,7 +2334,7 @@
     </article>
   </main>
 
-  <!-- Redesigned Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -2321,15 +2433,15 @@
      */
     const header = document.querySelector("[data-header]");
 
-    const headerScrollHandler = function () {
-      if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
+    window.addEventListener("scroll", function () {
+      if (window.innerWidth >= 992) { // Only for desktop
+        if (window.scrollY > 100) {
+          header.classList.add("active");
+        } else {
+          header.classList.remove("active");
+        }
       }
-    };
-
-    window.addEventListener("scroll", headerScrollHandler);
+    });
 
     /**
      * SCROLL REVEAL
@@ -2383,8 +2495,12 @@
         if (targetSection) {
           // Calculate header height (including fixed state if applicable)
           const headerHeight = header.offsetHeight;
-          const targetPosition = targetSection.offsetTop - headerHeight;
-          
+          const isHeaderFixed = window.innerWidth >= 992 && header.classList.contains('active');
+          const offset = isHeaderFixed ? headerHeight : 100; // Fallback to 100px if header isn't fixed
+
+          // Calculate target position with offset
+          const targetPosition = targetSection.offsetTop - offset;
+
           // Smooth scroll to the adjusted position
           window.scrollTo({
             top: targetPosition,
