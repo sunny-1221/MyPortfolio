@@ -86,16 +86,6 @@
     .btn-gradient-border:hover { background-image: linear-gradient(var(--white), var(--white)), linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); background-clip: padding-box, border-box; background-color: transparent; color: var(--white); box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2); }
     .btn-gradient-border::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary), var(--accent)); z-index: -1; border-radius: var(--radius-pill); opacity: 0; transition: opacity 0.4s ease; }
     .btn-gradient-border:hover::after { opacity: 1; }
-    .btn-projects { background: transparent; color: var(--accent); position: relative; overflow: hidden; border: 2px solid var(--accent); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-    .btn-projects:hover { color: var(--white); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(247, 37, 133, 0.2); }
-    .btn-projects::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--accent); z-index: -1; transform: scaleX(0); transform-origin: right; transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-    .btn-projects:hover::before { transform: scaleX(1); transform-origin: left; }
-    .btn-projects .arrow { display: inline-flex; align-items: center; margin-left: 8px; transition: all 0.3s ease; }
-    .btn-projects .arrow span { display: inline-block; transform: translateX(0); transition: transform 0.3s ease; opacity: 0; margin-left: -10px; }
-    .btn-projects:hover .arrow span { opacity: 1; transform: translateX(5px); }
-    .btn-projects:hover .arrow span:nth-child(1) { transition-delay: 0.1s; }
-    .btn-projects:hover .arrow span:nth-child(2) { transition-delay: 0.2s; }
-    .btn-projects:hover .arrow span:nth-child(3) { transition-delay: 0.3s; }
     .art-portfolio-contact-btn { display: inline-flex; align-items: center; padding: 12px 24px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); color: var(--white); border-radius: var(--radius-pill); font-weight: var(--fw-700); text-decoration: none; max-width: max-content; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2); position: relative; overflow: hidden; z-index: 1; }
     .art-portfolio-contact-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-dark) 100%); z-index: -1; opacity: 0; transition: opacity 0.3s ease; }
     .art-portfolio-contact-btn:hover::before { opacity: 1; }
@@ -207,8 +197,10 @@
     .about-content { margin-bottom: 60px; }
     .skills-container { background-color: var(--light-gray); padding: 30px; border-radius: var(--radius-16); margin-bottom: 80px; position: relative; z-index: 1; }
     .skills-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
-    .skill-item { background-color: var(--white); padding: 15px; border-radius: var(--radius-8); box-shadow: var(--shadow-1); display: flex; flex-direction: column; align-items: center; transition: var(--transition-2); transform: translateZ(0); }
-    .skill-item:hover { transform: translateY(-5px) translateZ(0); box-shadow: var(--shadow-2); }
+    .skill-item { background-color: var(--white); padding: 15px; border-radius: var(--radius-8); box-shadow: var(--shadow-1); display: flex; flex-direction: column; align-items: center; transition: var(--transition-2); }
+    /* --- CHANGE START: Skill Icon Hover Effect --- */
+    .skill-item:hover { transform: translateY(-5px) scale(1.05); box-shadow: var(--shadow-2); }
+    /* --- CHANGE END --- */
     .skill-icon { width: 50px; height: 50px; margin-bottom: 10px; }
     .skill-name { font-weight: var(--fw-700); color: var(--text-primary); text-align: center; }
     .grid-list { margin-top: 0; position: relative; z-index: 2; }
@@ -376,12 +368,10 @@
           <div class="hero-content">
             <h1 class="hero-name" data-reveal="top" data-reveal-delay="0.3s">Tatiparthi Sunny</h1>
             <h2 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
-              Frontend Developer | UI/UX Designer | IoT Engineer
+              UI/UX Designer & Frontend Developer
             </h2>
             <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
-              Versatile developer and designer with 1+ year experience creating responsive web applications, 
-              intuitive user interfaces, and innovative IoT solutions. Combining technical expertise in React 
-              and embedded systems with strong UI/UX design principles to build complete digital experiences.
+              I craft seamless digital experiences where design and technology meet, from responsive web apps to innovative IoT solutions.
             </p>
             <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
               <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -468,8 +458,8 @@
               <h2 class="h2 section-title" id="project-label">Featured Projects</h2>
               <p class="section-text">A selection of my recent work showcasing design and development skills.</p>
             </div>
-            <a href="projects.html" class="btn btn-projects"><span>View All Projects</span><div class="arrow"><span>&gt;</span><span>&gt;</span><span>&gt;</span></div></a>
-          </div>
+            <a href="projects.html" class="btn btn-gradient-border">View All Projects</a>
+            </div>
           <ul class="grid-list">
             <li><div class="project-card project-card-1" style="background-color: #f8f5fb"><div class="card-content" data-reveal="left"><p class="card-tag" style="color: var(--primary)">Web Design</p><div class="card-tags"><span class="card-tag card-tag--figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma"> Figma</span><span class="card-tag card-tag--react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React"> React</span><span class="card-tag card-tag--node"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="14" height="14" alt="Node.js"> Node.js</span><span class="card-tag card-tag--mongodb"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="14" height="14" alt="MongoDB"> MongoDB</span></div><h3 class="h3 card-title">E-commerce Platform</h3><p class="card-text">Designed and developed a custom e-commerce solution with focus on conversion optimization and mobile experience.</p><a href="#" class="btn btn-gradient-border">View Case Study</a></div><figure class="card-banner" data-reveal="right"><img src="webdesign1.png" width="650" height="370" loading="lazy" alt="E-commerce Platform" class="w-100"></figure></div></li>
             <li><div class="project-card project-card-2" style="background-color: #f1f5fd"><div class="card-content" data-reveal="right"><p class="card-tag" style="color: var(--accent)">Mobile Design</p><div class="card-tags"><span class="card-tag card-tag--xd"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" width="14" height="14" alt="Adobe XD"> Adobe XD</span><span class="card-tag card-tag--react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React Native"> React Native</span><span class="card-tag card-tag--js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="14" height="14" alt="JavaScript"> JavaScript</span></div><h3 class="h3 card-title">Fitness App</h3><p class="card-text">Created a complete UI/UX design system for a fitness tracking application with personalized workout plans.</p><a href="#" class="btn btn-gradient-border">View Case Study</a></div><figure class="card-banner" data-reveal="left"><img src="project-2.png" width="600" height="367" loading="lazy" alt="Fitness App" class="w-100"></figure></div></li>
@@ -497,7 +487,7 @@
           <div class="contact-card">
             <div class="contact-content" data-reveal="left">
               <div class="card-icon"><img src="icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon"></div>
-              <h2 class="h2 section-title">If you like what you see, let's work together.</h2>
+              <h2 class="h2 section-title">Have a project in mind? Let's build something remarkable.</h2>
               <p class="section-text">I bring rapid solutions to make the life of my clients easier. Have any questions? Reach out to me from this contact form or through my social channels.</p>
             </div>
             <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" class="contact-form" data-reveal="right">
