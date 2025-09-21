@@ -366,11 +366,131 @@
 
   <main>
     <article>
-      <section class="section hero" aria-label="home"></section>
-      <section class="section about" id="about" aria-label="about"></section>
-      <section class="section timeline" id="timeline"></section>
-      <section class="section project" id="projects" aria-labelledby="project-label"></section>
-      <section class="section certifications" id="certifications"></section>
+      <section class="section hero" aria-label="home">
+        <div class="container">
+          <figure class="hero-banner" data-reveal="left">
+            <div class="profile-image-container">
+              <img src="profileimg1.jpg" alt="Tatiparthi Sunny - Frontend Developer & UI/UX Designer" class="profile-image-mask">
+            </div>
+          </figure>
+          <div class="hero-content">
+            <h1 class="hero-name" data-reveal="top" data-reveal-delay="0.3s">Tatiparthi Sunny</h1>
+            <h2 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
+              Frontend Developer | UI/UX Designer | IoT Engineer
+            </h2>
+            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
+              Versatile developer and designer with 1+ year experience creating responsive web applications, 
+              intuitive user interfaces, and innovative IoT solutions. Combining technical expertise in React 
+              and embedded systems with strong UI/UX design principles to build complete digital experiences.
+            </p>
+            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="Sunny final Resume WIPRO.pdf" class="btn btn-gradient-border" download="Tatiparthi_Sunny_Resume.pdf">
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+          <div class="about-content" data-reveal="left">
+            <h2 class="h2 section-title">About Me</h2>
+            <p class="section-text">I'm Tatiparthi Sunny, a Computer Science graduate specializing in both technical development and user-centered design. With professional experience at Bharat Dynamics Limited and Cantilever Labs, I bridge the gap between functionality and aesthetics - whether developing secure web applications, designing intuitive interfaces, or building embedded systems.</p>
+            <p class="section-text">My unique skill set combines frontend development (React, JavaScript) with UI/UX design (Figma, Adobe XD) and IoT engineering. I approach every project with both technical precision and design thinking, ensuring solutions are not just functional but also deliver exceptional user experiences.</p>
+            <p class="section-text">From AI-powered healthcare applications to industrial automation systems, my work demonstrates how thoughtful design and robust engineering can create impactful solutions. I'm particularly passionate about projects that integrate physical and digital interfaces through IoT technology.</p>
+          </div>
+          <div class="skills-container" data-reveal="right">
+            <h3 class="h4" style="margin-bottom: 20px;">Technical Skills</h3>
+            <ul class="skills-list">
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon"><span class="skill-name">React.js</span></li>
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon"><span class="skill-name">JavaScript</span></li>
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon"><span class="skill-name">Python</span></li>
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="skill-icon"><span class="skill-name">Figma</span></li>
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg" alt="Sketch" class="skill-icon"><span class="skill-name">Sketch</span></li>
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="skill-icon"><span class="skill-name">Photoshop</span></li>
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" class="skill-icon"><span class="skill-name">Arduino</span></li>
+              <li class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" alt="Raspberry Pi" class="skill-icon"><span class="skill-name">Raspberry Pi</span></li>
+            </ul>
+          </div>
+          <ul class="grid-list">
+            <li data-reveal="bottom"><div class="about-card"><div class="card-icon"><img src="icon-1.svg" width="52" height="52" loading="lazy" alt="UI/UX Design"></div><h3 class="h4 card-title">UI/UX Design</h3><p class="card-text">Creating intuitive interfaces and user experiences with Figma, Adobe XD, and user research methodologies.</p></div></li>
+            <li data-reveal="bottom" data-reveal-delay="0.25s"><div class="about-card"><div class="card-icon"><img src="icon-2.svg" width="52" height="52" loading="lazy" alt="Frontend Development"></div><h3 class="h4 card-title">Frontend Development</h3><p class="card-text">Building responsive web applications with React, JavaScript, and modern CSS frameworks.</p></div></li>
+            <li data-reveal="bottom" data-reveal-delay="0.5s"><div class="about-card"><div class="card-icon"><img src="icon-3.svg" width="52" height="52" loading="lazy" alt="IoT Solutions"></div><h3 class="h4 card-title">IoT Solutions</h3><p class="card-text">Developing embedded systems and automation solutions using Arduino and Raspberry Pi.</p></div></li>
+            <li data-reveal="bottom" data-reveal-delay="0.75s"><div class="about-card"><div class="card-icon"><img src="icon-4.svg" width="52" height="52" loading="lazy" alt="Prototyping"></div><h3 class="h4 card-title">Prototyping</h3><p class="card-text">Rapidly iterating from wireframes to interactive prototypes for both web and physical interfaces.</p></div></li>
+          </ul>
+        </div>
+      </section>
+      
+      <section class="section timeline" id="timeline">
+        <div class="container">
+          <h2 class="h2 section-title timeline-title">Professional Experience</h2>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Jan 2025 - Present</div>
+              <div class="timeline-content" data-reveal="right">
+                <h3>Bharat Dynamics Limited</h3>
+                <p class="timeline-position">Apprentice (ITD Division)</p>
+                <p class="card-text">Led UI/UX design for defense system applications, creating wireframes and interactive prototypes in Figma. Implemented responsive, accessible components using React and TypeScript, improving system usability by 40%.</p>
+                <div class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Figma</span><span class="tech-tag">UX Research</span></div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Feb - Jun 2022</div>
+              <div class="timeline-content" data-reveal="left">
+                <h3>Cantilever Labs</h3>
+                <p class="timeline-position">IoT & UI Developer Intern</p>
+                <p class="card-text">Developed intuitive interfaces for several IoT projects, including a surveillance vehicle and smart home systems. Utilized Node-RED to create dashboards for real-time data visualization and device control, reducing user training time.</p>
+                <div class="tech-tags"><span class="tech-tag">Arduino</span><span class="tech-tag">Python</span><span class="tech-tag">Node-RED</span><span class="tech-tag">UI Design</span></div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2021 - Present</div>
+              <div class="timeline-content" data-reveal="right">
+                <h3>Freelance Projects</h3>
+                <p class="timeline-position">UI/UX Designer & Developer</p>
+                <p class="card-text">Provided freelance UI/UX design and development, delivering responsive websites and brand identities for small businesses. Specialized in user research, wireframing in Figma, and building custom WordPress themes.</p>
+                <div class="tech-tags"><span class="tech-tag">Figma</span><span class="tech-tag">WordPress</span><span class="tech-tag">HTML/CSS</span><span class="tech-tag">User Research</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project" id="projects" aria-labelledby="project-label">
+        <div class="container">
+          <div class="title-wrapper" data-reveal="top">
+            <div>
+              <h2 class="h2 section-title" id="project-label">Featured Projects</h2>
+              <p class="section-text">A selection of my recent work showcasing design and development skills.</p>
+            </div>
+            <a href="projects.html" class="btn btn-projects"><span>View All Projects</span><div class="arrow"><span>&gt;</span><span>&gt;</span><span>&gt;</span></div></a>
+          </div>
+          <ul class="grid-list">
+            <li><div class="project-card project-card-1" style="background-color: #f8f5fb"><div class="card-content" data-reveal="left"><p class="card-tag" style="color: var(--primary)">Web Design</p><div class="card-tags"><span class="card-tag card-tag--figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma"> Figma</span><span class="card-tag card-tag--react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React"> React</span><span class="card-tag card-tag--node"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="14" height="14" alt="Node.js"> Node.js</span><span class="card-tag card-tag--mongodb"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="14" height="14" alt="MongoDB"> MongoDB</span></div><h3 class="h3 card-title">E-commerce Platform</h3><p class="card-text">Designed and developed a custom e-commerce solution with focus on conversion optimization and mobile experience.</p><a href="#" class="btn btn-gradient-border">View Case Study</a></div><figure class="card-banner" data-reveal="right"><img src="webdesign1.png" width="650" height="370" loading="lazy" alt="E-commerce Platform" class="w-100"></figure></div></li>
+            <li><div class="project-card project-card-2" style="background-color: #f1f5fd"><div class="card-content" data-reveal="right"><p class="card-tag" style="color: var(--accent)">Mobile Design</p><div class="card-tags"><span class="card-tag card-tag--xd"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" width="14" height="14" alt="Adobe XD"> Adobe XD</span><span class="card-tag card-tag--react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React Native"> React Native</span><span class="card-tag card-tag--js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="14" height="14" alt="JavaScript"> JavaScript</span></div><h3 class="h3 card-title">Fitness App</h3><p class="card-text">Created a complete UI/UX design system for a fitness tracking application with personalized workout plans.</p><a href="#" class="btn btn-gradient-border">View Case Study</a></div><figure class="card-banner" data-reveal="left"><img src="project-2.png" width="600" height="367" loading="lazy" alt="Fitness App" class="w-100"></figure></div></li>
+            <li><div class="project-card project-card-3" style="background-color: #f5faf7"><div class="card-content" data-reveal="left"><p class="card-tag" style="color: var(--success)">Web Design</p><div class="card-tags"><span class="card-tag card-tag--html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="14" height="14" alt="HTML5"> HTML5</span><span class="card-tag card-tag--css"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="14" height="14" alt="CSS3"> CSS3</span><span class="card-tag card-tag--js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="14" height="14" alt="JavaScript"> JavaScript</span></div><h3 class="h3 card-title">Corporate Website</h3><p class="card-text">Redesigned a corporate website with improved information architecture and interactive elements.</p><a href="#" class="btn btn-gradient-border">View Case Study</a></div><figure class="card-banner" data-reveal="right"><img src="project-3.png" width="600" height="367" loading="lazy" alt="Corporate Website" class="w-100"></figure></div></li>
+            <li><div class="project-card project-card-4" style="background-color: #fcf4f6"><div class="card-content" data-reveal="left"><p class="card-tag" style="color: var(--accent)">Mobile Design</p><div class="card-tags"><span class="card-tag card-tag--figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma"> Figma</span><span class="card-tag card-tag--illustrator"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" width="14" height="14" alt="Illustrator"> Illustrator</span><span class="card-tag card-tag--photoshop"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" width="14" height="14" alt="Photoshop"> Photoshop</span></div><h3 class="h3 card-title">Travel App</h3><p class="card-text">Designed a travel planning application with itinerary builder and location-based recommendations.</p><a href="#" class="btn btn-gradient-border">View Case Study</a></div><figure class="card-banner" data-reveal="right"><img src="project-4.png" width="620" height="370" loading="lazy" alt="Travel App" class="w-100"></figure></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section certifications" id="certifications">
+        <div class="container">
+          <h2 class="certifications-title" data-reveal="bottom">My Certifications</h2>
+          <p class="section-text" style="text-align: center; max-width: 700px; margin: 0 auto 50px;" data-reveal="bottom">Professional credentials that validate my expertise in UI/UX design and development.</p>
+          <div class="certifications-grid">
+            <div class="certification-card" data-reveal="left"><div class="certification-header"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Logo" class="certification-logo"><div class="certification-meta"><span class="certification-issuer">Google</span><span class="certification-date">Jun 2023</span></div></div><h3 class="certification-title">Google UX Design Professional Certificate</h3><p class="certification-description">7-course program covering the foundations of UX design, including user research, wireframing, prototyping, and testing.</p><a href="#" class="certification-link">View Credential <ion-icon name="arrow-forward-outline"></ion-icon></a></div>
+            <div class="certification-card" data-reveal="bottom"><div class="certification-header"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD Logo" class="certification-logo"><div class="certification-meta"><span class="certification-issuer">Adobe</span><span class="certification-date">Mar 2023</span></div></div><h3 class="certification-title">Adobe Certified Expert - XD</h3><p class="certification-description">Demonstrated expertise in Adobe XD for UI/UX design, including advanced prototyping and design system creation.</p><a href="#" class="certification-link">View Credential <ion-icon name="arrow-forward-outline"></ion-icon></a></div>
+            <div class="certification-card" data-reveal="right"><div class="certification-header"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png" alt="Meta Logo" class="certification-logo"><div class="certification-meta"><span class="certification-issuer">Meta</span><span class="certification-date">Jan 2023</span></div></div><h3 class="certification-title">Frontend Development Certificate</h3><p class="certification-description">Comprehensive program covering HTML, CSS, JavaScript, React, and responsive design principles.</p><a href="#" class="certification-link">View Credential <ion-icon name="arrow-forward-outline"></ion-icon></a></div>
+            <div class="certification-card" data-reveal="left"><div class="certification-header"><img src="https://www.accessibilityassociation.org/s/iaap-logo-color.png" alt="IAAP Logo" class="certification-logo"><div class="certification-meta"><span class="certification-issuer">IAAP</span><span class="certification-date">Nov 2022</span></div></div><h3 class="certification-title">Web Accessibility Specialist</h3><p class="certification-description">Certified in creating accessible digital experiences that comply with WCAG 2.1 standards.</p><a href="#" class="certification-link">View Credential <ion-icon name="arrow-forward-outline"></ion-icon></a></div>
+          </div>
+        </div>
+      </section>
       
       <section class="section contact-section" id="contact" aria-label="contact">
         <div class="container">
@@ -391,14 +511,72 @@
               <button type="submit" class="btn btn-gradient-border">Send message</button>
             </form>
           </div>
-          <div class="social-contact-cards"></div>
-          <div class="art-portfolio-contact-card" data-reveal="bottom"></div>
+          <div class="social-contact-cards">
+            <a href="mailto:taiparthisunny124@gmail.com" class="social-contact-card" data-reveal="bottom"><div class="card-icon"><ion-icon name="mail-outline"></ion-icon></div><h3 class="card-title">Email</h3><p class="card-text">taiparthisunny124@gmail.com</p><span class="hover-effect"></span></a>
+            <a href="https://in.linkedin.com/in/tatiparthi-sunny" class="social-contact-card" data-reveal="bottom" data-reveal-delay="0.1s"><div class="card-icon"><ion-icon name="logo-linkedin"></ion-icon></div><h3 class="card-title">LinkedIn</h3><p class="card-text">Connect professionally</p><span class="hover-effect"></span></a>
+            <a href="#" class="social-contact-card" data-reveal="bottom" data-reveal-delay="0.2s"><div class="card-icon"><ion-icon name="logo-instagram"></ion-icon></div><h3 class="card-title">Instagram</h3><p class="card-text">Follow my daily work</p><span class="hover-effect"></span></a>
+            <a href="#" class="social-contact-card" data-reveal="bottom" data-reveal-delay="0.3s"><div class="card-icon"><ion-icon name="logo-behance"></ion-icon></div><h3 class="card-title">Behance</h3><p class="card-text">View my portfolio</p><span class="hover-effect"></span></a>
+          </div>
+          <div class="art-portfolio-contact-card" data-reveal="bottom">
+            <div class="art-portfolio-images">
+              <div class="image-stack">
+                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262" alt="Artwork 1" class="stack-top" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477" alt="Artwork 2" class="stack-bottom" loading="lazy">
+              </div>
+            </div>
+            <div class="art-portfolio-content">
+              <h3>Explore My Art Portfolio</h3>
+              <p>View my collection of graphic design work and personal art projects</p>
+              <a href="https://liebespace.vercel.app" class="art-portfolio-contact-btn" target="_blank">
+                <span>Visit Gallery</span>
+                <div class="arrow">
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </article>
   </main>
 
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="logo-light.svg" width="64" height="24" alt="Tatiparthi Sunny" class="footer-logo">
+        </a>
+        <p class="footer-text">Creating beautiful, functional digital experiences that users love.</p>
+        <ul class="footer-social-list">
+          <li><a href="https://www.linkedin.com/in/tatiparthi-sunny" class="footer-social-link" aria-label="My LinkedIn Profile"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+          <li><a href="#" class="footer-social-link" aria-label="My Twitter Profile"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="footer-social-link" aria-label="My Dribbble Profile"><ion-icon name="logo-dribbble"></ion-icon></a></li>
+          <li><a href="#" class="footer-social-link" aria-label="My GitHub Profile"><ion-icon name="logo-github"></ion-icon></a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About</a></li>
+          <li><a href="#timeline" class="footer-link">Experience</a></li>
+          <li><a href="#projects" class="footer-link">Projects</a></li>
+          <li><a href="#certifications" class="footer-link">Certifications</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h3 class="footer-title">Contact Info</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:taiparthisunny124@gmail.com" class="footer-link">taiparthisunny124@gmail.com</a></li>
+          <li><a href="tel:8331844559" class="footer-link">8331844559</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 Tatiparthi Sunny. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
     'use strict';
