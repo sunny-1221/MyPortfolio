@@ -7,15 +7,12 @@
   <title>Tatiparthi Sunny - UI/UX Designer & Developer</title>
   <meta name="description" content="Professional portfolio of Tatiparthi Sunny, UI/UX Designer and Developer">
 
-  <!-- Favicon -->
   <link rel="shortcut icon" href="TSfavicon.svg" type="image/svg+xml">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
 
-  <!-- Inlined Critical CSS -->
   <style>
     /* ===== CRITICAL CSS ===== */
     /* Enhanced Color Palette */
@@ -504,7 +501,6 @@
     }
   </style>
 
-  <!-- Main CSS (non-critical) -->
   <style>
     /* ===== RESET ===== */
     *,
@@ -954,49 +950,32 @@
     }
 
     /* ===== TIMELINE SECTION ===== */
-    /* Timeline Section Enhancements */
-.timeline-position {
-  color: var(--primary);
-  font-weight: var(--fw-700);
-  margin: 8px 0 12px;
-}
+    .timeline-position {
+      color: var(--primary);
+      font-weight: var(--fw-700);
+      margin: 8px 0 12px;
+    }
+    
+    .timeline-content .card-text {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
 
-.timeline-bullets {
-  margin: 16px 0;
-  padding-left: 20px;
-}
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
 
-.timeline-bullets li {
-  position: relative;
-  margin-bottom: 8px;
-  color: var(--text-secondary);
-}
-
-.timeline-bullets li::before {
-  content: "•";
-  color: var(--accent);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-  position: absolute;
-}
-
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.tech-tag {
-  background-color: rgba(67, 97, 238, 0.1);
-  color: var(--primary);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
+    .tech-tag {
+      background-color: rgba(67, 97, 238, 0.1);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
     .timeline-title {
       text-align: center;
       margin-bottom: 50px;
@@ -1056,7 +1035,7 @@
       transform: translateX(-50%);
       top: -30px;
       font-weight: bold;
-      color: var(--timeline-color);
+      color: var(--text-secondary);
     }
 
     .timeline-content {
@@ -1107,22 +1086,32 @@
 
     @media (max-width: 767px) {
       .timeline-items::before {
-        left: 7px;
+        left: 12px;
+        transform: translateX(-50%);
       }
 
       .timeline-dot {
-        left: 0;
+        left: 12px;
+        transform: translateX(-50%);
       }
 
       .timeline-date {
         text-align: left;
         left: 40px;
         transform: none;
+        top: 10px;
+        width: auto;
       }
 
       .timeline-content {
-        width: calc(100% - 40px);
+        width: 100%;
         margin-left: 40px !important;
+        margin-top: 40px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content,
+      .timeline-item:nth-child(odd) .timeline-content {
+          margin-left: 40px !important;
       }
 
       .timeline-content::before {
@@ -1640,216 +1629,220 @@
     }
 
     /* ===== ART PORTFOLIO CONTACT CARD ===== */
-.art-portfolio-contact-card {
-  background: var(--white);
-  border-radius: var(--radius-16);
-  padding: 30px;
-  box-shadow: var(--shadow-2);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  margin-top: 40px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
-  position: relative;
-  border: none;
-}
-
-/* Gradient border using pseudo-element */
-.art-portfolio-contact-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: var(--radius-16);
-  padding: 3px;
-  background: linear-gradient(
-    var(--gradient-angle),
-    var(--primary) 0%,
-    var(--accent) 50%,
-    var(--primary-light) 100%
-  );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 0;
-}
-
-.art-portfolio-contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-3);
-}
-
-.art-portfolio-contact-card:hover::after {
-  opacity: 1;
-  animation: borderGradient 3s linear infinite;
-  background-size: 200% 200%;
-}
-
-@keyframes borderGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.art-portfolio-images {
-  position: relative;
-  height: 200px;
-  border-radius: var(--radius-12);
-  overflow: hidden;
-  z-index: 1;
-}
-
-.image-stack {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.stack-top {
-  position: absolute;
-  width: 80%;
-  top: 0;
-  left: 10%;
-  z-index: 2;
-  border-radius: var(--radius-8);
-  box-shadow: var(--shadow-2);
-  transition: all 0.4s ease;
-  height: 180px;
-  object-fit: cover;
-  border: 2px solid var(--white);
-}
-
-.stack-bottom {
-  position: absolute;
-  width: 80%;
-  bottom: 0;
-  right: 10%;
-  z-index: 1;
-  border-radius: var(--radius-8);
-  box-shadow: var(--shadow-1);
-  transition: all 0.4s ease;
-  height: 180px;
-  object-fit: cover;
-  border: 2px solid var(--white);
-}
-
-.art-portfolio-contact-card:hover .stack-top {
-  transform: rotate(5deg) translateY(-10px);
-}
-
-.art-portfolio-contact-card:hover .stack-bottom {
-  transform: rotate(-3deg) translateY(10px);
-}
-
-.art-portfolio-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 1;
-}
-
-.art-portfolio-content h3 {
-  color: var(--text-primary);
-  margin-bottom: 12px;
-  font-size: var(--fs-4);
-}
-
-.art-portfolio-content p {
-  color: var(--text-secondary);
-  margin-bottom: 25px;
-}
-
-.art-portfolio-contact-btn .arrow {
-  width: 20px;
-  height: 20px;
-  margin-left: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.art-portfolio-contact-btn .arrow svg {
-  width: 100%;
-  height: 100%;
-  stroke: var(--white);
-}
-
-.art-portfolio-contact-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
-}
-
-.art-portfolio-contact-btn:hover span {
-  transform: translateX(3px);
-}
-
-.art-portfolio-contact-btn:hover .arrow {
-  transform: translateX(5px);
-}
-
-/* Glow effect */
-.art-portfolio-contact-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(67, 97, 238, 0.05) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  z-index: 0;
-  transition: opacity 0.5s ease;
-  opacity: 0;
-}
-
-.art-portfolio-contact-card:hover::before {
-  opacity: 1;
-}
-
-/* ===== MEDIA QUERIES ===== */
-@media (min-width: 768px) {
   .art-portfolio-contact-card {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+    background: var(--white);
+    border-radius: var(--radius-16);
+    padding: 30px;
+    box-shadow: var(--shadow-2);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    position: relative;
+    border: none;
   }
-  
+
+  /* Gradient border using pseudo-element */
+  .art-portfolio-contact-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-16);
+    padding: 3px;
+    background: linear-gradient(
+      var(--gradient-angle),
+      var(--primary) 0%,
+      var(--accent) 50%,
+      var(--primary-light) 100%
+    );
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  .art-portfolio-contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-3);
+  }
+
+  .art-portfolio-contact-card:hover::after {
+    opacity: 1;
+    animation: borderGradient 3s linear infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes borderGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   .art-portfolio-images {
-    height: 250px;
+    position: relative;
+    height: 200px;
+    border-radius: var(--radius-12);
+    overflow: hidden;
+    z-index: 1;
   }
-  
-  .stack-top,
-  .stack-bottom {
-    height: 220px;
-  }
-}
 
-@media (min-width: 992px) {
-  .art-portfolio-contact-card {
-    grid-template-columns: 1.2fr 1fr;
+  .image-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
-  
+
+  .stack-top {
+    position: absolute;
+    width: 80%;
+    top: 0;
+    left: 10%;
+    z-index: 2;
+    border-radius: var(--radius-8);
+    box-shadow: var(--shadow-2);
+    transition: all 0.4s ease;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid var(--white);
+  }
+
+  .stack-bottom {
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 10%;
+    z-index: 1;
+    border-radius: var(--radius-8);
+    box-shadow: var(--shadow-1);
+    transition: all 0.4s ease;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid var(--white);
+  }
+
+  .art-portfolio-contact-card:hover .stack-top {
+    transform: rotate(5deg) translateY(-10px);
+  }
+
+  .art-portfolio-contact-card:hover .stack-bottom {
+    transform: rotate(-3deg) translateY(10px);
+  }
+
+  .art-portfolio-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+  }
+
   .art-portfolio-content h3 {
-    font-size: var(--fs-3);
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: var(--fs-4);
   }
-}
+
+  .art-portfolio-content p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+  }
+
+  .art-portfolio-contact-btn .arrow {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  .art-portfolio-contact-btn .arrow svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--white);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+  .art-portfolio-contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
+  }
+
+  .art-portfolio-contact-btn:hover span {
+    transform: translateX(3px);
+  }
+
+  .art-portfolio-contact-btn:hover .arrow {
+    transform: translateX(5px);
+  }
+
+  /* Glow effect */
+  .art-portfolio-contact-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(67, 97, 238, 0.05) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    z-index: 0;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+
+  .art-portfolio-contact-card:hover::before {
+    opacity: 1;
+  }
+
+  /* ===== MEDIA QUERIES ===== */
+  @media (min-width: 768px) {
+    .art-portfolio-contact-card {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    
+    .art-portfolio-images {
+      height: 250px;
+    }
+    
+    .stack-top,
+    .stack-bottom {
+      height: 220px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .art-portfolio-contact-card {
+      grid-template-columns: 1.2fr 1fr;
+    }
+    
+    .art-portfolio-content h3 {
+      font-size: var(--fs-3);
+    }
+  }
 
     /* ===== REDESIGNED FOOTER ===== */
     .footer {
@@ -2189,7 +2182,6 @@
 </head>
 
 <body>
-  <!-- Header -->
   <header class="header" data-header>
     <div class="container">
       <a href="#" class="logo">
@@ -2236,16 +2228,14 @@
 
   <main>
     <article>
-      <!-- Hero Section with Light Grey Background -->
       <section class="section hero" aria-label="home">
         <div class="container">
-          <figure class="hero-banner">
+          <figure class="hero-banner" data-reveal="left">
             <div class="profile-image-container">
               <img
                 src="profileimg1.jpg"
                 alt="Tatiparthi Sunny - Frontend Developer & UI/UX Designer" 
-                class="profile-image-mask" 
-                data-reveal="top">
+                class="profile-image-mask">
             </div>
           </figure>
 
@@ -2271,7 +2261,6 @@
         </div>
       </section>
 
-      <!-- About Section -->
       <section class="section about" id="about" aria-label="about">
         <div class="container">
           <div class="about-content" data-reveal="left">
@@ -2296,7 +2285,6 @@
           <div class="skills-container" data-reveal="right">
             <h3 class="h4" style="margin-bottom: 20px;">Technical Skills</h3>
             <ul class="skills-list">
-              <!-- Development Skills -->
               <li class="skill-item">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon">
                 <span class="skill-name">React.js</span>
@@ -2310,7 +2298,6 @@
                 <span class="skill-name">Python</span>
               </li>
               
-              <!-- UI/UX Skills -->
               <li class="skill-item">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="skill-icon">
                 <span class="skill-name">Figma</span>
@@ -2324,7 +2311,6 @@
                 <span class="skill-name">Photoshop</span>
               </li>
               
-              <!-- IoT Skills -->
               <li class="skill-item">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" class="skill-icon">
                 <span class="skill-name">Arduino</span>
@@ -2385,26 +2371,18 @@
         </div>
       </section>
 
-      <!-- Timeline Section -->
-      <!-- Experience Section -->
       <section class="section timeline" id="timeline">
         <div class="container">
           <h2 class="h2 section-title timeline-title">Professional Experience</h2>
           
           <div class="timeline-items">
-            <!-- Bharat Dynamics Limited -->
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-date">Jan 2025 - Present</div>
               <div class="timeline-content" data-reveal="right">
                 <h3>Bharat Dynamics Limited</h3>
                 <p class="timeline-position">Apprentice (ITD Division)</p>
-                <ul class="timeline-bullets">
-                  <li>Designed and developed user interfaces for defense systems applications, focusing on usability in high-stakes environments</li>
-                  <li>Created wireframes and interactive prototypes using Figma, improving system usability by 40% through iterative design testing</li>
-                  <li>Implemented responsive UI components with React and TypeScript, ensuring accessibility compliance</li>
-                  <li>Collaborated with engineers to translate complex system requirements into intuitive user flows</li>
-                </ul>
+                <p class="card-text">Led UI/UX design for defense system applications, creating wireframes and interactive prototypes in Figma. Implemented responsive, accessible components using React and TypeScript, improving system usability by 40%.</p>
                 <div class="tech-tags">
                   <span class="tech-tag">React</span>
                   <span class="tech-tag">TypeScript</span>
@@ -2414,19 +2392,13 @@
               </div>
             </div>
             
-            <!-- Cantilever Labs -->
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-date">Feb - Jun 2022</div>
               <div class="timeline-content" data-reveal="left">
                 <h3>Cantilever Labs</h3>
                 <p class="timeline-position">IoT & UI Developer Intern</p>
-                <ul class="timeline-bullets">
-                  <li>Designed and developed interfaces for 4 IoT projects including a surveillance vehicle and smart home automation system</li>
-                  <li>Created dashboard UIs in Node-RED for real-time sensor data visualization and device control</li>
-                  <li>Implemented user-friendly control interfaces for robotic applications, reducing training time by 25%</li>
-                  <li>Conducted user testing to optimize interface layouts for industrial environments</li>
-                </ul>
+                 <p class="card-text">Developed intuitive interfaces for several IoT projects, including a surveillance vehicle and smart home systems. Utilized Node-RED to create dashboards for real-time data visualization and device control, reducing user training time.</p>
                 <div class="tech-tags">
                   <span class="tech-tag">Arduino</span>
                   <span class="tech-tag">Python</span>
@@ -2436,19 +2408,13 @@
               </div>
             </div>
             
-            <!-- Freelance Work -->
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-date">2021 - Present</div>
               <div class="timeline-content" data-reveal="right">
                 <h3>Freelance Projects</h3>
                 <p class="timeline-position">UI/UX Designer & Developer</p>
-                <ul class="timeline-bullets">
-                  <li>Designed and developed responsive websites for small businesses, improving conversion rates by up to 35%</li>
-                  <li>Created brand identities and design systems for startups, including style guides and component libraries</li>
-                  <li>Conducted user research and created wireframes for client projects using Figma and Adobe XD</li>
-                  <li>Built custom WordPress themes with focus on usability and accessibility standards</li>
-                </ul>
+                <p class="card-text">Provided freelance UI/UX design and development, delivering responsive websites and brand identities for small businesses. Specialized in user research, wireframing in Figma, and building custom WordPress themes.</p>
                 <div class="tech-tags">
                   <span class="tech-tag">Figma</span>
                   <span class="tech-tag">WordPress</span>
@@ -2461,7 +2427,6 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section class="section project" id="projects" aria-labelledby="project-label">
         <div class="container">
           <div class="title-wrapper" data-reveal="top">
@@ -2474,13 +2439,12 @@
             <a href="projects.html" class="btn btn-projects">
               <span>View All Projects</span>
               <div class="arrow">
-                <span>>>></span>
+                <span>&gt;</span><span>&gt;</span><span>&gt;</span>
               </div>
             </a>
           </div>
 
           <ul class="grid-list">
-            <!-- Project Card 1 -->
             <li>
               <div class="project-card project-card-1" style="background-color: #f8f5fb">
                 <div class="card-content" data-reveal="left">
@@ -2511,9 +2475,9 @@
                     <span class="btn-progressive">
                       View Case Study
                       <span class="arrow">
-                        <span>></span>
-                        <span>></span>
-                        <span>></span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
                       </span>
                     </span>
                   </a>
@@ -2525,14 +2489,13 @@
               </div>
             </li>
 
-            <!-- Project Card 2 -->
             <li>
               <div class="project-card project-card-2" style="background-color: #f1f5fd">
                 <div class="card-content" data-reveal="right">
                   <p class="card-tag" style="color: var(--accent)">Mobile Design</p>
                   <div class="card-tags">
                     <span class="card-tag card-tag--xd">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe/adobe-xd.svg" width="14" height="14" alt="Adobe XD">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" width="14" height="14" alt="Adobe XD">
                       Adobe XD
                     </span>
                     <span class="card-tag card-tag--react">
@@ -2552,9 +2515,9 @@
                     <span class="btn-progressive">
                       View Case Study
                       <span class="arrow">
-                        <span>></span>
-                        <span>></span>
-                        <span>></span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
                       </span>
                     </span>
                   </a>
@@ -2566,7 +2529,6 @@
               </div>
             </li>
 
-            <!-- Project Card 3 -->
             <li>
               <div class="project-card project-card-3" style="background-color: #f5faf7">
                 <div class="card-content" data-reveal="left">
@@ -2593,9 +2555,9 @@
                     <span class="btn-progressive">
                       View Case Study
                       <span class="arrow">
-                        <span>></span>
-                        <span>></span>
-                        <span>></span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
                       </span>
                     </span>
                   </a>
@@ -2607,7 +2569,6 @@
               </div>
             </li>
 
-            <!-- Project Card 4 -->
             <li>
               <div class="project-card project-card-4" style="background-color: #fcf4f6">
                 <div class="card-content" data-reveal="left">
@@ -2634,9 +2595,9 @@
                     <span class="btn-progressive">
                       View Case Study
                       <span class="arrow">
-                        <span>></span>
-                        <span>></span>
-                        <span>></span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
+                        <span>&gt;</span>
                       </span>
                     </span>
                   </a>
@@ -2651,7 +2612,6 @@
         </div>
       </section>
 
-      <!-- Certifications Section -->
       <section class="section certifications" id="certifications">
         <div class="container">
           <h2 class="certifications-title" data-reveal="bottom">My Certifications</h2>
@@ -2661,10 +2621,9 @@
           </p>
 
           <div class="certifications-grid">
-            <!-- Certification 1 -->
             <div class="certification-card" data-reveal="left">
               <div class="certification-header">
-                <img src="https://via.placeholder.com/80" alt="Google UX Design Certificate" class="certification-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google Logo" class="certification-logo">
                 <div class="certification-meta">
                   <span class="certification-issuer">Google</span>
                   <span class="certification-date">Jun 2023</span>
@@ -2681,10 +2640,9 @@
               </a>
             </div>
 
-            <!-- Certification 2 -->
             <div class="certification-card" data-reveal="bottom">
               <div class="certification-header">
-                <img src="https://via.placeholder.com/80" alt="Adobe Certified Expert" class="certification-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD Logo" class="certification-logo">
                 <div class="certification-meta">
                   <span class="certification-issuer">Adobe</span>
                   <span class="certification-date">Mar 2023</span>
@@ -2701,10 +2659,9 @@
               </a>
             </div>
 
-            <!-- Certification 3 -->
             <div class="certification-card" data-reveal="right">
               <div class="certification-header">
-                <img src="https://via.placeholder.com/80" alt="Frontend Development Certificate"
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png" alt="Meta Logo"
                   class="certification-logo">
                 <div class="certification-meta">
                   <span class="certification-issuer">Meta</span>
@@ -2721,10 +2678,9 @@
               </a>
             </div>
 
-            <!-- Certification 4 -->
             <div class="certification-card" data-reveal="left">
               <div class="certification-header">
-                <img src="https://via.placeholder.com/80" alt="Accessibility Certification" class="certification-logo">
+                <img src="https://www.accessibilityassociation.org/s/iaap-logo-color.png" alt="IAAP Logo" class="certification-logo">
                 <div class="certification-meta">
                   <span class="certification-issuer">IAAP</span>
                   <span class="certification-date">Nov 2022</span>
@@ -2743,11 +2699,9 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
       <section class="section contact-section" id="contact" aria-label="contact" style="background-color: var(--white);">
         <div class="container">
           <div class="contact-card" style="background-color: var(--light-gray);">
-            <!-- Keep existing contact form content -->
             <div class="contact-content" data-reveal="left">
               <div class="card-icon">
                 <img src="icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon">
@@ -2773,7 +2727,6 @@
             </form>
           </div>
 
-          <!-- Social Contact Cards (keep existing) -->
           <div class="social-contact-cards">
             <a href="mailto:taiparthisunny124@gmail.com" class="social-contact-card" data-reveal="bottom">
               <div class="card-icon">
@@ -2812,7 +2765,6 @@
             </a>
           </div>
 
-          <!-- New Art Portfolio Card -->
           <div class="art-portfolio-contact-card" data-reveal="bottom">
             <div class="art-portfolio-images">
               <div class="image-stack">
@@ -2838,7 +2790,6 @@
     </article>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
@@ -2850,22 +2801,22 @@
         </p>
         <ul class="footer-social-list">
           <li>
-            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/tatiparthi-sunny" class="footer-social-link" aria-label="My LinkedIn Profile">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
           <li>
-            <a href="#" class="footer-social-link" aria-label="Twitter">
+            <a href="#" class="footer-social-link" aria-label="My Twitter Profile">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
           <li>
-            <a href="#" class="footer-social-link" aria-label="Dribbble">
+            <a href="#" class="footer-social-link" aria-label="My Dribbble Profile">
               <ion-icon name="logo-dribbble"></ion-icon>
             </a>
           </li>
           <li>
-            <a href="#" class="footer-social-link" aria-label="GitHub">
+            <a href="#" class="footer-social-link" aria-label="My GitHub Profile">
               <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
@@ -2886,20 +2837,18 @@
 
       <div class="footer-links-group">
         <h3 class="footer-title">Contact Info</h3>
-        <address class="footer-contact">
-          <a href="mailto:taiparthisunny124@gmail.com" class="footer-link">taiparthisunny124@gmail.com</a>
-          <a href="tel:+441234567890" class="footer-link">+44 123 456 7890</a>
-          <p class="footer-link">London, United Kingdom</p>
-        </address>
+        <ul class="footer-links">
+          <li><a href="mailto:taiparthisunny124@gmail.com" class="footer-link">taiparthisunny124@gmail.com</a></li>
+          <li><a href="tel:8331844559" class="footer-link">8331844559</a></li>
+        </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p class="copyright">&copy; 2023 Tatiparthi Sunny. All rights reserved.</p>
+      <p class="copyright">&copy; 2025 Tatiparthi Sunny. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     'use strict';
 
@@ -2949,7 +2898,7 @@
     const revealElements = document.querySelectorAll("[data-reveal]");
     const revealDelayElements = document.querySelectorAll("[data-reveal-delay]");
 
-    const reveal = function () {
+    const revealOnScroll = function () {
       for (let i = 0, len = revealElements.length; i < len; i++) {
         if (revealElements[i].getBoundingClientRect().top < window.innerHeight / 1.2) {
           revealElements[i].classList.add("revealed");
@@ -2960,67 +2909,64 @@
     for (let i = 0, len = revealDelayElements.length; i < len; i++) {
       revealDelayElements[i].style.transitionDelay = revealDelayElements[i].dataset.revealDelay;
     }
-
-    window.addEventListener("scroll", reveal);
-    window.addEventListener("load", reveal);
+    
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
 
     /**
-     * SMOOTH SCROLL FOR NAV LINKS WITH OFFSET
+     * Execute functions on page load
      */
-    document.querySelectorAll('.navbar-link').forEach(link => {
-      link.addEventListener('click', function (e) {
-        // Prevent default anchor behavior
-        e.preventDefault();
-
-        // Get target section
-        const targetId = this.getAttribute('href');
-
-        // Special handling for Home link
-        if (targetId === '#') {
-          // Scroll to top with smooth behavior
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-
-          // Close mobile menu if open
-          if (navbar.classList.contains('active')) {
-            toggleNavbar();
-          }
-          return;
-        }
-
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-          // Calculate header height (including fixed state if applicable)
-          const headerHeight = header.offsetHeight;
-          const isHeaderFixed = window.innerWidth >= 992 && header.classList.contains('active');
-          const offset = isHeaderFixed ? headerHeight : 100; // Fallback to 100px if header isn't fixed
-
-          // Calculate target position with offset
-          const targetPosition = targetSection.offsetTop - offset;
-
-          // Smooth scroll to the adjusted position
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          // Close mobile menu if open
-          if (navbar.classList.contains('active')) {
-            toggleNavbar();
-          }
-        }
-      });
-    });
-
-    // Enhanced hover effects for buttons and gradient elements
     document.addEventListener('DOMContentLoaded', function() {
+    
+      // Reveal hero section elements immediately on page load
+      const heroElements = document.querySelectorAll(".hero [data-reveal]");
+      heroElements.forEach(el => {
+        el.classList.add("revealed");
+      });
+
+      /**
+       * SMOOTH SCROLL FOR NAV LINKS WITH OFFSET
+       */
+      document.querySelectorAll('.navbar-link, .btn-primary').forEach(link => {
+        link.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          
+          if (!targetId || !targetId.startsWith('#')) return;
+
+          e.preventDefault();
+
+          if (targetId === '#') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (navbar.classList.contains('active')) {
+              toggleNavbar();
+            }
+            return;
+          }
+
+          const targetSection = document.querySelector(targetId);
+
+          if (targetSection) {
+            const headerHeight = header.offsetHeight;
+            const isHeaderFixed = window.innerWidth >= 992 && (window.scrollY > 100);
+            const offset = isHeaderFixed ? headerHeight : 100;
+            const targetPosition = targetSection.offsetTop - offset;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+
+            if (navbar.classList.contains('active')) {
+              toggleNavbar();
+            }
+          }
+        });
+      });
+
+      // Enhanced hover effects for Art Portfolio Card
       const artCard = document.querySelector('.art-portfolio-contact-card');
       
       if (artCard) {
-        // Parallax effect for images
         artCard.addEventListener('mousemove', function(e) {
           const rect = this.getBoundingClientRect();
           const x = e.clientX - rect.left;
@@ -3039,7 +2985,6 @@
             stackBottom.style.transform = `rotate(-3deg) translate(${-moveX * 0.3}px, ${-moveY * 0.3 + 10}px)`;
           }
           
-          // Adjust gradient border position based on mouse
           const angle = Math.atan2(y - centerY, x - centerX) * 180 / Math.PI;
           this.style.setProperty('--gradient-angle', `${angle}deg`);
         });
@@ -3049,25 +2994,17 @@
           const stackBottom = this.querySelector('.stack-bottom');
           
           if (stackTop && stackBottom) {
+            // Re-apply the hover state transforms for a smooth transition back
             stackTop.style.transform = 'rotate(5deg) translateY(-10px)';
             stackBottom.style.transform = 'rotate(-3deg) translateY(10px)';
           }
           
-          // Reset gradient position
           this.style.removeProperty('--gradient-angle');
         });
       }
-
-      // Smooth transitions for all gradient elements
-      document.querySelectorAll('.btn, .hero-name, .certification-link, .footer-link').forEach(element => {
-        element.addEventListener('mouseenter', function() {
-          this.style.transition = 'all 0.3s ease';
-        });
-      });
     });
   </script>
 
-  <!-- Ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
