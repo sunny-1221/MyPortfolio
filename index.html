@@ -82,41 +82,10 @@
     .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: var(--white); box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3); border: none;}
     .btn-primary::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); z-index: -1; opacity: 0; transition: opacity 0.3s ease; }
     .btn-primary:hover::before { opacity: 1; }
-    
-    /* --- CHANGE START: New Button Border Style --- */
-    .btn-gradient-border {
-      color: var(--primary);
-      border: 2px solid transparent;
-      background-image: linear-gradient(var(--white), var(--white)), linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-      transition: all 0.4s ease;
-    }
-    .btn-gradient-border:hover {
-      background-image: linear-gradient(var(--white), var(--white)), linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      background-clip: padding-box, border-box;
-      background-color: transparent; /* Fallback */
-      color: var(--white);
-      box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
-    }
-    .btn-gradient-border::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      z-index: -1;
-      border-radius: var(--radius-pill);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .btn-gradient-border:hover::after {
-      opacity: 1;
-    }
-    /* --- CHANGE END --- */
-    
+    .btn-gradient-border { color: var(--primary); border: 2px solid transparent; background-image: linear-gradient(var(--white), var(--white)), linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); background-origin: border-box; background-clip: padding-box, border-box; transition: all 0.4s ease; }
+    .btn-gradient-border:hover { background-image: linear-gradient(var(--white), var(--white)), linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); background-clip: padding-box, border-box; background-color: transparent; color: var(--white); box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2); }
+    .btn-gradient-border::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary), var(--accent)); z-index: -1; border-radius: var(--radius-pill); opacity: 0; transition: opacity 0.4s ease; }
+    .btn-gradient-border:hover::after { opacity: 1; }
     .btn-projects { background: transparent; color: var(--accent); position: relative; overflow: hidden; border: 2px solid var(--accent); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
     .btn-projects:hover { color: var(--white); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(247, 37, 133, 0.2); }
     .btn-projects::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--accent); z-index: -1; transform: scaleX(0); transform-origin: right; transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
@@ -289,10 +258,8 @@
     .certification-description { color: var(--text-secondary); margin-bottom: 20px; font-size: var(--fs-7); }
     .certification-link ion-icon { transition: var(--transition-1); }
     .certification-link:hover ion-icon { transform: translateX(5px); }
-    /* --- CHANGE START: Contact Form Color --- */
     .contact-section { padding-block: var(--section-padding); background-color: var(--light-gray); }
     .contact-card { background-color: var(--white); box-shadow: var(--shadow-2); padding: 60px; border-radius: var(--radius-16); display: grid; gap: 40px; margin-bottom: 40px; }
-    /* --- CHANGE END --- */
     .contact-header { text-align: center; margin-bottom: 60px; }
     .contact-title { font-size: var(--fs-2); color: var(--text-primary); margin-bottom: 15px; position: relative; display: inline-block; }
     .contact-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 3px; }
@@ -368,7 +335,6 @@
       <a href="#" class="logo">
         <img src="Sunlogo.svg" width="64" height="24" alt="Sunny home">
       </a>
-
       <nav class="navbar" data-navbar>
         <div class="navbar-top">
           <a href="#" class="logo">
@@ -378,7 +344,6 @@
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
         </div>
-
         <ul class="navbar-list">
           <li><a href="#" class="navbar-link">Home</a></li>
           <li><a href="#about" class="navbar-link">About</a></li>
@@ -387,14 +352,11 @@
           <li><a href="#certifications" class="navbar-link">Certifications</a></li>
           <li><a href="#contact" class="navbar-link">Contact</a></li>
         </ul>
-
         <div class="wrapper">
           <a href="mailto:taiparthisunny124@gmail.com" class="contact-link">taiparthisunny124@gmail.com</a>
           <a href="tel:8331844559" class="contact-link">8331844559</a>
         </div>
-        
-        </nav>
-
+      </nav>
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
@@ -404,69 +366,23 @@
 
   <main>
     <article>
-      <section class="section hero" aria-label="home">
-        <div class="container">
-          <figure class="hero-banner" data-reveal="left">
-            <div class="profile-image-container">
-              <img src="profileimg1.jpg" alt="Tatiparthi Sunny - Frontend Developer & UI/UX Designer" class="profile-image-mask">
-            </div>
-          </figure>
-          <div class="hero-content">
-            <h1 class="hero-name" data-reveal="top" data-reveal-delay="0.3s">Tatiparthi Sunny</h1>
-            <h2 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
-              Frontend Developer | UI/UX Designer | IoT Engineer
-            </h2>
-            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
-              Versatile developer and designer with 1+ year experience creating responsive web applications, 
-              intuitive user interfaces, and innovative IoT solutions. Combining technical expertise in React 
-              and embedded systems with strong UI/UX design principles to build complete digital experiences.
-            </p>
-            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
-              <a href="#projects" class="btn btn-primary">View My Work</a>
-              <a href="Sunny final Resume WIPRO.pdf" class="btn btn-gradient-border" download="Tatiparthi_Sunny_Resume.pdf">
-                Download Resume
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section project" id="projects" aria-labelledby="project-label">
-        <div class="container">
-          <div class="title-wrapper" data-reveal="top">
-            <div>
-              <h2 class="h2 section-title" id="project-label">Featured Projects</h2>
-              <p class="section-text">
-                A selection of my recent work showcasing design and development skills.
-              </p>
-            </div>
-            <a href="projects.html" class="btn btn-projects"><span>View All Projects</span><div class="arrow"><span>&gt;</span><span>&gt;</span><span>&gt;</span></div></a>
-          </div>
-          <ul class="grid-list">
-            <li><div class="project-card project-card-1" style="background-color: #f8f5fb"><div class="card-content" data-reveal="left"><p class="card-tag" style="color: var(--primary)">Web Design</p><div class="card-tags"><span class="card-tag card-tag--figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="14" height="14" alt="Figma"> Figma</span><span class="card-tag card-tag--react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="14" height="14" alt="React"> React</span><span class="card-tag card-tag--node"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="14" height="14" alt="Node.js"> Node.js</span><span class="card-tag card-tag--mongodb"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="14" height="14" alt="MongoDB"> MongoDB</span></div><h3 class="h3 card-title">E-commerce Platform</h3><p class="card-text">Designed and developed a custom e-commerce solution with focus on conversion optimization and mobile experience.</p><a href="#" class="btn btn-gradient-border">View Case Study</a></div><figure class="card-banner" data-reveal="right"><img src="webdesign1.png" width="650" height="370" loading="lazy" alt="E-commerce Platform" class="w-100"></figure></div></li>
-            </ul>
-        </div>
-      </section>
-
+      <section class="section hero" aria-label="home"></section>
+      <section class="section about" id="about" aria-label="about"></section>
+      <section class="section timeline" id="timeline"></section>
+      <section class="section project" id="projects" aria-labelledby="project-label"></section>
+      <section class="section certifications" id="certifications"></section>
+      
       <section class="section contact-section" id="contact" aria-label="contact">
         <div class="container">
           <div class="contact-card">
             <div class="contact-content" data-reveal="left">
-              <div class="card-icon">
-                <img src="icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon">
-              </div>
+              <div class="card-icon"><img src="icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon"></div>
               <h2 class="h2 section-title">If you like what you see, let's work together.</h2>
-              <p class="section-text">
-                I bring rapid solutions to make the life of my clients easier. Have any questions? Reach out to me from
-                this contact form or through my social channels.
-              </p>
+              <p class="section-text">I bring rapid solutions to make the life of my clients easier. Have any questions? Reach out to me from this contact form or through my social channels.</p>
             </div>
-
             <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html" class="contact-form" data-reveal="right">
               <input type="hidden" name="form-name" value="contact">
-              <p class="hidden" style="display:none;">
-                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-              </p>
+              <p class="hidden" style="display:none;"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
               <div class="input-wrapper">
                 <input type="text" name="name" placeholder="Name *" required class="input-field">
                 <input type="email" name="email_address" placeholder="Email *" required class="input-field">
@@ -475,49 +391,14 @@
               <button type="submit" class="btn btn-gradient-border">Send message</button>
             </form>
           </div>
-          
-           </div>
+          <div class="social-contact-cards"></div>
+          <div class="art-portfolio-contact-card" data-reveal="bottom"></div>
+        </div>
       </section>
     </article>
   </main>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <img src="logo-light.svg" width="64" height="24" alt="Tatiparthi Sunny" class="footer-logo">
-        </a>
-        <p class="footer-text">Creating beautiful, functional digital experiences that users love.</p>
-        <ul class="footer-social-list">
-          <li><a href="https://www.linkedin.com/in/tatiparthi-sunny" class="footer-social-link" aria-label="My LinkedIn Profile"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-          <li><a href="#" class="footer-social-link" aria-label="My Twitter Profile"><ion-icon name="logo-twitter"></ion-icon></a></li>
-          <li><a href="#" class="footer-social-link" aria-label="My Dribbble Profile"><ion-icon name="logo-dribbble"></ion-icon></a></li>
-          <li><a href="#" class="footer-social-link" aria-label="My GitHub Profile"><ion-icon name="logo-github"></ion-icon></a></li>
-        </ul>
-      </div>
-      <div class="footer-links-group">
-        <h3 class="footer-title">Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="#" class="footer-link">Home</a></li>
-          <li><a href="#about" class="footer-link">About</a></li>
-          <li><a href="#timeline" class="footer-link">Experience</a></li>
-          <li><a href="#projects" class="footer-link">Projects</a></li>
-          <li><a href="#certifications" class="footer-link">Certifications</a></li>
-          <li><a href="#contact" class="footer-link">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-links-group">
-        <h3 class="footer-title">Contact Info</h3>
-        <ul class="footer-links">
-          <li><a href="mailto:taiparthisunny124@gmail.com" class="footer-link">taiparthisunny124@gmail.com</a></li>
-          <li><a href="tel:8331844559" class="footer-link">8331844559</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="copyright">&copy; 2025 Tatiparthi Sunny. All rights reserved.</p>
-    </div>
-  </footer>
+  <footer class="footer"></footer>
 
   <script>
     'use strict';
