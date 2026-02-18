@@ -4,602 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunny's Projects | UI/UX Designer & Developer</title>
-    <style>
-        :root {
-            /* Updated to match main portfolio colors */
-            --primary: #4361ee;
-            --primary-light: #4895ef;
-            --primary-dark: #3a0ca3;
-            --primary-vibrant: #3a86ff;
-            --accent: #f72585;
-            --accent-light: #ff70a6;
-            --accent-dark: #b5179e;
-            --accent-vibrant: #ff006e;
-            --white: #ffffff;
-            --light-gray: #f8f9fa;
-            --medium-gray: #e9ecef;
-            --dark-gray: #6c757d;
-            --charcoal: #212529;
-            --success: #4cc9f0;
-            --warning: #f8961e;
-            --danger: #ef233c;
-            --text-primary: var(--charcoal);
-            --text-secondary: var(--dark-gray);
-            --text-light: var(--white);
-            --bg-light: var(--light-gray);
-            --bg-dark: var(--charcoal);
-            --border-color: rgba(0, 0, 0, 0.1);
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            
-            /* Shadows from main portfolio */
-            --shadow-1: 0 0 20px var(--shadow-color);
-            --shadow-2: 0 10px 30px var(--shadow-color);
-            --shadow-3: 0 15px 40px var(--shadow-color);
-            
-            /* Border radius from main portfolio */
-            --radius-circle: 50%;
-            --radius-pill: 100px;
-            --radius-8: 8px;
-            --radius-12: 12px;
-            --radius-16: 16px;
-            --radius-24: 24px;
-            --radius-section: 24px;
-            
-            /* Transitions from main portfolio */
-            --transition-1: 0.25s ease;
-            --transition-2: 0.5s ease;
-            --transition-3: 0.3s ease-in-out;
-            --transition-4: 0.4s ease;
-            
-            /* Tag Colors - updated to match portfolio */
-            --tag-react: rgba(97, 218, 251, 0.1);
-            --tag-node: rgba(104, 160, 99, 0.1);
-            --tag-flutter: rgba(69, 196, 241, 0.1);
-            --tag-firebase: rgba(255, 167, 38, 0.1);
-            --tag-figma: rgba(162, 89, 255, 0.1);
-            --tag-python: rgba(53, 114, 165, 0.1);
-            --tag-iot: rgba(0, 188, 212, 0.1);
-            --tag-gsap: rgba(0, 204, 102, 0.1);
-            --tag-threejs: rgba(0, 0, 0, 0.1);
-            --tag-graphql: rgba(229, 53, 171, 0.1);
-            --tag-mongodb: rgba(77, 181, 74, 0.1);
-            --tag-redux: rgba(118, 74, 188, 0.1);
-        }
-        
-        @font-face {
-            font-family: 'Manrope';
-            src: url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
-        }
-        
-        @font-face {
-            font-family: 'Pacifico';
-            src: url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-        }
-        
-        body {
-            font-family: 'Manrope', sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--white);
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-        
-        /* Container with max-width and centered */
-        .container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
-        /* Back Button with portfolio's style */
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin: 60px 0 30px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: var(--radius-pill);
-            transition: var(--transition-1);
-            box-shadow: var(--shadow-1);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .back-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-2);
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        }
-        
-        .back-btn:hover ion-icon {
-            transform: translateX(-5px);
-        }
-        
-        .back-btn ion-icon {
-            transition: var(--transition-1);
-        }
-        
-        /* Projects Header with portfolio's gradient */
-        .projects-header {
-            text-align: center;
-            padding: 80px 0 60px;
-            position: relative;
-            overflow: hidden;
-            background-color: var(--light-gray);
-            border-radius: var(--radius-section);
-            margin-bottom: 40px;
-        }
-        
-        .projects-header::before,
-        .projects-header::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.25;
-            z-index: -1;
-        }
-        
-        .projects-header::before {
-            width: 400px;
-            height: 400px;
-            background: var(--primary-vibrant);
-            top: -100px;
-            left: -100px;
-        }
-        
-        .projects-header::after {
-            width: 300px;
-            height: 300px;
-            background: var(--accent-vibrant);
-            bottom: -100px;
-            right: -100px;
-        }
-        
-        .projects-header h1 {
-            font-size: 2.7rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-            position: relative;
-            display: inline-block;
-            font-weight: 700;
-        }
-        
-        .projects-header h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 3px;
-        }
-        
-        .projects-header p {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
-        
-        /* Filter Buttons with portfolio's style */
-        .project-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-        
-        .filter-btn {
-            padding: 12px 24px;
-            background: transparent;
-            border: none;
-            color: var(--primary);
-            border-radius: var(--radius-pill);
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition-1);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            font-size: 1rem;
-        }
-        
-        .filter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            z-index: -1;
-            opacity: 0;
-            transition: var(--transition-1);
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-1);
-        }
-        
-        .filter-btn:hover::before, .filter-btn.active::before {
-            opacity: 1;
-        }
-        
-        /* Projects Grid with animation */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 30px;
-            padding-bottom: 80px;
-        }
-        
-        /* Project Card with portfolio's animation */
-        .project-card {
-            border-radius: var(--radius-16);
-            overflow: hidden;
-            transition: var(--transition-2);
-            position: relative;
-            background: var(--white);
-            box-shadow: var(--shadow-1);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .project-card.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--primary-light), rgba(255,255,255,0));
-            opacity: 0;
-            transition: var(--transition-2);
-            z-index: 1;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-3);
-        }
-        
-        .project-card:hover::before {
-            opacity: 0.2;
-        }
-        
-        /* Project Image */
-        .project-image {
-            height: 240px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-2);
-        }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-        
-        /* Project Tags */
-        .project-tags {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 8px;
-            z-index: 10;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-        
-        .tag {
-            padding: 6px 12px;
-            border-radius: var(--radius-pill);
-            font-size: 0.75rem;
-            font-weight: 700;
-            transition: var(--transition-1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        /* Specific tag color classes */
-        .tag-react {
-            background: var(--tag-react);
-            color: #61dafb;
-        }
-        
-        .tag-node {
-            background: var(--tag-node);
-            color: #539e43;
-        }
-        
-        .tag-flutter {
-            background: var(--tag-flutter);
-            color: #45c4f1;
-        }
-        
-        .tag-firebase {
-            background: var(--tag-firebase);
-            color: #ffa726;
-        }
-        
-        .tag-figma {
-            background: var(--tag-figma);
-            color: #a259ff;
-        }
-        
-        .tag-python {
-            background: var(--tag-python);
-            color: #3572a5;
-        }
-        
-        .tag-iot {
-            background: var(--tag-iot);
-            color: #00bcd4;
-        }
-        
-        .tag-gsap {
-            background: var(--tag-gsap);
-            color: #00cc66;
-        }
-        
-        .tag-threejs {
-            background: var(--tag-threejs);
-            color: #000000;
-        }
-        
-        .tag-graphql {
-            background: var(--tag-graphql);
-            color: #e535ab;
-        }
-        
-        .tag-mongodb {
-            background: var(--tag-mongodb);
-            color: #4db54a;
-        }
-        
-        .tag-redux {
-            background: var(--tag-redux);
-            color: #764abc;
-        }
-        
-        .project-card:hover .tag {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-1);
-        }
-        
-        /* Project Details */
-        .project-details {
-            padding: 24px;
-        }
-        
-        .project-title {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-        
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        
-        /* Project Link with portfolio's style */
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-weight: 700;
-            text-decoration: none;
-            transition: var(--transition-1);
-            position: relative;
-            padding-bottom: 2px;
-        }
-        
-        .project-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: var(--transition-1);
-        }
-        
-        .project-link:hover {
-            color: var(--accent);
-        }
-        
-        .project-link:hover::after {
-            width: 100%;
-        }
-        
-        .project-link:hover ion-icon {
-            transform: translateX(4px);
-        }
-        
-        .project-link ion-icon {
-            transition: var(--transition-1);
-        }
-        
-        /* Special hover effects for design projects */
-        .project-card[data-category="design"] .project-image {
-            position: relative;
-            height: 240px;
-            overflow: hidden;
-        }
-        
-        .project-card[data-category="design"] .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .project-card[data-category="design"] .design-default-img {
-            opacity: 1;
-            transform: scale(1);
-            z-index: 1;
-        }
-        
-        .project-card[data-category="design"] .design-hover-img {
-            opacity: 0;
-            transform: scale(1.1);
-            z-index: 2;
-        }
-        
-        .project-card[data-category="design"]:hover .design-default-img {
-            opacity: 0;
-            transform: scale(1.1);
-        }
-        
-        .project-card[data-category="design"]:hover .design-hover-img {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        /* Video hover effect for IoT projects */
-        .project-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            z-index: 1;
-        }
-        
-        .project-static-img {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.6s ease;
-            z-index: 2;
-        }
-        
-        .project-card[data-category="iot"]:hover .project-static-img {
-            opacity: 0;
-        }
-        
-        .project-card[data-category="iot"]:hover .project-video {
-            opacity: 1;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .container {
-                padding: 0 30px;
-            }
-            
-            .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .projects-header {
-                padding: 60px 0 40px;
-            }
-            
-            .projects-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .projects-header p {
-                font-size: 1.1rem;
-            }
-            
-            .project-filter {
-                justify-content: flex-start;
-                overflow-x: auto;
-                padding-bottom: 15px;
-                scrollbar-width: none;
-            }
-            
-            .project-filter::-webkit-scrollbar {
-                display: none;
-            }
-            
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-image {
-                height: 200px;
-            }
-            
-            .back-btn {
-                margin: 40px 0;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 16px;
-            }
-            
-            .projects-header {
-                padding: 50px 0 30px;
-            }
-            
-            .projects-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .back-btn {
-                margin: 30px 0;
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -609,8 +15,8 @@
         </a>
         
         <header class="projects-header">
-            <h1>My Creative Projects</h1>
-            <p>Explore my portfolio of digital experiences, from sleek UI designs to robust web applications. Each project represents a unique challenge and creative solution.</p>
+            <h1 class="h1">My Creative Projects</h1>
+            <p style="max-width: 600px; margin: 15px auto; color: var(--text-secondary);">Explore my portfolio of digital experiences, from sleek UI designs to robust web applications.</p>
             
             <div class="project-filter">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -622,250 +28,116 @@
         </header>
         
         <div class="projects-grid">
-            <!-- Website Project 1 - Updated with real links -->
             <div class="project-card" data-category="website">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="E-commerce Website">
-                    <div class="project-tags">
+                <div style="height: 220px; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="E-commerce">
+                </div>
+                <div class="card-content">
+                    <div class="card-tags">
                         <span class="tag tag-react">React</span>
                         <span class="tag tag-node">Node.js</span>
-                        <span class="tag tag-mongodb">MongoDB</span>
                     </div>
-                </div>
-                <div class="project-details">
-                    <h3 class="project-title">Luxe Fashion Store</h3>
-                    <p class="project-description">
-                        A premium e-commerce platform featuring advanced product filtering, seamless checkout, and personalized recommendations.
-                    </p>
-                    <a href="https://example.com/luxe-fashion-case-study" 
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Case Study
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </a>
+                    <h3 class="h3" style="margin-bottom: 10px;">Luxe Fashion Store</h3>
+                    <p class="section-text" style="font-size: 1.4rem;">Premium e-commerce platform with advanced filtering.</p>
                 </div>
             </div>
             
-            <!-- Mobile App Project - Updated with real links -->
             <div class="project-card" data-category="mobile">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Fitness App">
-                    <div class="project-tags">
+                <div style="height: 220px; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?auto=format&fit=crop&w=800&q=80" alt="Fitness App">
+                </div>
+                <div class="card-content">
+                    <div class="card-tags">
                         <span class="tag tag-flutter">Flutter</span>
                         <span class="tag tag-firebase">Firebase</span>
-                        <span class="tag tag-redux">Redux</span>
                     </div>
-                </div>
-                <div class="project-details">
-                    <h3 class="project-title">FitTrack Pro</h3>
-                    <p class="project-description">
-                        Cross-platform fitness app with workout tracking, nutrition planning, and social features to keep users motivated.
-                    </p>
-                    <a href="https://example.com/fittrack-case-study" 
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Case Study
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </a>
+                    <h3 class="h3" style="margin-bottom: 10px;">FitTrack Pro</h3>
+                    <p class="section-text" style="font-size: 1.4rem;">Cross-platform fitness tracking application.</p>
                 </div>
             </div>
-            
-            <!-- UI/UX Design Project - Updated with real links -->
+
             <div class="project-card" data-category="design">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         class="design-default-img" alt="Banking App UI">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
-                         class="design-hover-img" alt="Banking App UI Alternative">
-                    <div class="project-tags">
+                <div style="height: 220px; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1541462608143-0afed437f846?auto=format&fit=crop&w=800&q=80" alt="Banking UI">
+                </div>
+                <div class="card-content">
+                    <div class="card-tags">
                         <span class="tag tag-figma">Figma</span>
                         <span class="tag tag-react">Prototyping</span>
-                        <span class="tag tag-graphql">Design System</span>
                     </div>
-                </div>
-                <div class="project-details">
-                    <h3 class="project-title">NeoBank Dashboard</h3>
-                    <p class="project-description">
-                        Modern banking interface with data visualization, transaction management, and financial insights.
-                    </p>
-                    <a href="https://www.figma.com/proto/example-neobank" 
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Prototype
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </a>
+                    <h3 class="h3" style="margin-bottom: 10px;">NeoBank Dashboard</h3>
+                    <p class="section-text" style="font-size: 1.4rem;">Modern banking interface data visualization.</p>
                 </div>
             </div>
-            
-            <!-- IoT Project - Updated with real links -->
+
             <div class="project-card" data-category="iot">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         class="project-static-img" alt="Smart Home System">
-                    <video class="project-video" autoplay loop muted playsinline>
-                        <source src="https://assets.mixkit.co/videos/preview/mixkit-smart-home-device-17719-large.mp4" type="video/mp4">
-                    </video>
-                    <div class="project-tags">
-                        <span class="tag tag-python">Python</span>
+                <div style="height: 220px; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1558002038-1091a166111c?auto=format&fit=crop&w=800&q=80" alt="Smart Home">
+                </div>
+                <div class="card-content">
+                    <div class="card-tags">
                         <span class="tag tag-iot">IoT</span>
-                        <span class="tag tag-node">Raspberry Pi</span>
+                        <span class="tag tag-python">Python</span>
                     </div>
-                </div>
-                <div class="project-details">
-                    <h3 class="project-title">Smart Home Hub</h3>
-                    <p class="project-description">
-                        Centralized home automation system with device control, energy monitoring, and voice assistant integration.
-                    </p>
-                    <a href="https://example.com/smart-home-documentation" 
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Documentation
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Website Project 2 - Updated with real links -->
-            <div class="project-card" data-category="website">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
-                         alt="Portfolio Website">
-                    <div class="project-tags">
-                        <span class="tag tag-gsap">GSAP</span>
-                        <span class="tag tag-threejs">Three.js</span>
-                        <span class="tag tag-react">WebGL</span>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h3 class="project-title">Interactive Artist Portfolio</h3>
-                    <p class="project-description">
-                        Immersive digital portfolio featuring 3D artwork visualization and interactive gallery experiences.
-                    </p>
-                    <a href="https://example-artist-portfolio.com" 
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Live Site
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Mobile App Project 2 - Updated with real links -->
-            <div class="project-card" data-category="mobile">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Recipe App">
-                    <div class="project-tags">
-                        <span class="tag tag-react">React Native</span>
-                        <span class="tag tag-graphql">GraphQL</span>
-                        <span class="tag tag-redux">Redux</span>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h3 class="project-title">Chef's Companion</h3>
-                    <p class="project-description">
-                        Recipe management app with step-by-step cooking instructions, ingredient scaling, and meal planning.
-                    </p>
-                    <a href="https://apps.apple.com/example-app" 
-                       class="project-link"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View App Store
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </a>
+                    <h3 class="h3" style="margin-bottom: 10px;">Smart Home Hub</h3>
+                    <p class="section-text" style="font-size: 1.4rem;">Home automation with voice control.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Ion Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
-    <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Make entire project card clickable (except for the link itself)
-            document.querySelectorAll('.project-card').forEach(card => {
-                const link = card.querySelector('.project-link');
-                card.addEventListener('click', (e) => {
-                    // Don't trigger if clicking directly on the link
-                    if (!e.target.closest('.project-link') && link) {
-                        window.open(link.href, '_blank');
-                    }
-                });
-                
-                // Add cursor pointer to indicate clickability
-                card.style.cursor = 'pointer';
-            });
-
-            // Rest of your existing JavaScript...
             const filterButtons = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.project-card');
             
-            // Initialize all projects as visible
-            projectCards.forEach(card => {
-                card.classList.add('revealed');
-            });
-            
-            // Filter projects
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Update active button
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    button.classList.add('active');
-                    
-                    const filterValue = button.getAttribute('data-filter');
-                    
-                    // Filter projects with animation
-                    projectCards.forEach(card => {
-                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.classList.add('revealed');
-                            }, 50);
-                        } else {
-                            card.classList.remove('revealed');
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-            
-            // Scroll animation with Intersection Observer
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
+            // Check for URL params to pre-filter (e.g., from index.html "View More Designs")
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialFilter = urlParams.get('filter');
+
+            const applyFilter = (filterValue) => {
+                 projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        // Small timeout to allow display:block to render before adding opacity
+                        setTimeout(() => {
+                            card.classList.remove('hide');
+                            card.classList.add('show');
+                        }, 50);
+                    } else {
+                        card.classList.remove('show');
+                        card.classList.add('hide');
+                        // Wait for transition to finish before hiding element
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 500); // Matches CSS transition time
                     }
                 });
-            }, observerOptions);
-            
-            // Observe all project cards
-            projectCards.forEach(card => {
-                observer.observe(card);
-            });
-            
-            // Back button smooth scroll
-            document.querySelector('.back-btn').addEventListener('click', function(e) {
-                e.preventDefault();
-                window.location.href = 'index.html';
+            };
+
+            // Initialize filter
+            if(initialFilter) {
+                const activeBtn = document.querySelector(`.filter-btn[data-filter="${initialFilter}"]`);
+                if(activeBtn) {
+                    document.querySelector('.filter-btn.active').classList.remove('active');
+                    activeBtn.classList.add('active');
+                    applyFilter(initialFilter);
+                }
+            } else {
+                projectCards.forEach(card => card.classList.add('show'));
+            }
+
+            // Button Click Listeners
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const filterValue = button.getAttribute('data-filter');
+                    applyFilter(filterValue);
+                });
             });
         });
     </script>
