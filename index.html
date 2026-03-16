@@ -159,7 +159,11 @@
     .hero .container { display: grid; gap: 50px; position: relative; z-index: 2; }
     .hero-banner { position: relative; max-width: max-content; margin-inline: auto; }
     .profile-image-container { width: 100%; max-width: 560px; height: auto; aspect-ratio: 1/1; }
-    .profile-image-mask { width: 100%; height: 100%; -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 192.71"><path d="M198 71c10.4 39.76-21.65 85.41-57.3 106.84s-75.13 18.68-103.07-1.32A91.16 91.16 0 012.62 81C12 42.62 47.12 3 91.06.17S187.67 31.19 198 71z"/></svg>'); mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 192.71"><path d="M198 71c10.4 39.76-21.65 85.41-57.3 106.84s-75.13 18.68-103.07-1.32A91.16 91.16 0 012.62 81C12 42.62 47.12 3 91.06.17S187.67 31.19 198 71z"/></svg>'); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; object-fit: cover; box-shadow: var(--shadow-2); }
+    
+    /* ADDED: Styling for Lottie Player to fit mask perfectly */
+    lottie-player { width: 100%; height: 100%; object-fit: cover; }
+
+    .profile-image-mask { width: 100%; height: 100%; -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 192.71"><path d="M198 71c10.4 39.76-21.65 85.41-57.3 106.84s-75.13 18.68-103.07-1.32A91.16 91.16 0 012.62 81C12 42.62 47.12 3 91.06.17S187.67 31.19 198 71z"/></svg>'); mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 192.71"><path d="M198 71c10.4 39.76-21.65 85.41-57.3 106.84s-75.13 18.68-103.07-1.32A91.16 91.16 0 012.62 81C12 42.62 47.12 3 91.06.17S187.67 31.19 198 71z"/></svg>'); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; box-shadow: var(--shadow-2); }
     @supports (mask-image: url('')) or (-webkit-mask-image: url('')) { .profile-image-mask { border-radius: 0; } }
     .hero .shape { position: absolute; bottom: 10%; right: 2%; filter: drop-shadow(var(--shadow-2)); }
     .hero-content { text-align: center; }
@@ -353,7 +357,16 @@
         <div class="container">
           <figure class="hero-banner" data-reveal="left">
             <div class="profile-image-container">
-              <img src="profileimg1.jpg" alt="Tatiparthi Sunny - Frontend Developer & UI/UX Designer" class="profile-image-mask">
+              
+              <lottie-player 
+                src="Ui Ux Design.json" 
+                background="transparent" 
+                speed="1" 
+                class="profile-image-mask" 
+                loop 
+                autoplay>
+              </lottie-player>
+              
             </div>
           </figure>
           <div class="hero-content">
@@ -572,6 +585,8 @@
       <p class="copyright">&copy; 2026 Tatiparthi Sunny. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
   <script>
     'use strict';
